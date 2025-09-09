@@ -87,19 +87,6 @@ const Hero = () => {
             with experience in <span className="text-accent/80">deep learning</span>, <span className="text-accent/80">data analysis</span>, and <span className="text-accent/80">full-stack development</span>.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button variant="default" size="lg" className="group relative overflow-hidden">
-              <span className="relative z-10 flex items-center">
-                View My Work
-                <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
-              </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-primary/20 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500" />
-            </Button>
-            <Button variant="outline" size="lg" className="group border-accent/50 hover:border-accent hover:bg-accent/10">
-              <Mail className="mr-2 h-4 w-4 text-accent" />
-              Contact Me
-            </Button>
-          </div>
 
           <div className="flex justify-center gap-6">
             <a 
@@ -117,14 +104,18 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/10 to-accent/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
             </a>
             <a 
-              href="#" 
+              href="https://github.com/HashemFarhan"
+              target="_blank"
+              rel="noopener noreferrer"
               className="relative p-4 rounded-lg bg-card/30 border border-accent/20 backdrop-blur-sm hover:bg-accent/10 hover:border-accent/50 transition-all duration-300 hover:scale-110 group overflow-hidden"
             >
               <Github className="h-5 w-5 text-accent group-hover:animate-pulse relative z-10" />
               <div className="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/10 to-accent/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
             </a>
             <a 
-              href="#" 
+              href="https://www.linkedin.com/in/hash-oo7/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="relative p-4 rounded-lg bg-card/30 border border-accent/20 backdrop-blur-sm hover:bg-accent/10 hover:border-accent/50 transition-all duration-300 hover:scale-110 group overflow-hidden"
             >
               <Linkedin className="h-5 w-5 text-accent group-hover:animate-pulse relative z-10" />

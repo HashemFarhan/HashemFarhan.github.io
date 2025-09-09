@@ -73,11 +73,21 @@ const Contact = () => {
                   Connect Online
                 </p>
                 <div className="flex gap-4">
-                  <Button variant="outline" size="sm" className="flex-1">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="flex-1"
+                    onClick={() => window.open('https://github.com/HashemFarhan', '_blank')}
+                  >
                     <Github className="h-4 w-4 mr-2" />
                     GitHub
                   </Button>
-                  <Button variant="outline" size="sm" className="flex-1">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="flex-1"
+                    onClick={() => window.open('https://www.linkedin.com/in/hash-oo7/', '_blank')}
+                  >
                     <Linkedin className="h-4 w-4 mr-2" />
                     LinkedIn
                   </Button>

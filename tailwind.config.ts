@@ -125,6 +125,35 @@ export default {
             opacity: "1",
             transform: "scale(1.1)" 
           }
+        },
+        "skill-reveal": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(20px) scale(0.9)"
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0) scale(1)"
+          }
+        },
+        "icon-bounce": {
+          "0%, 100%": {
+            transform: "translateY(0) rotate(0deg)"
+          },
+          "50%": {
+            transform: "translateY(-5px) rotate(5deg)"
+          }
+        },
+        "gradient-shift": {
+          "0%": {
+            backgroundPosition: "0% 50%"
+          },
+          "50%": {
+            backgroundPosition: "100% 50%"
+          },
+          "100%": {
+            backgroundPosition: "0% 50%"
+          }
         }
       },
       animation: {
@@ -137,6 +166,9 @@ export default {
         "glitch": "glitch 0.3s ease-in-out infinite",
         "code-scroll": "code-scroll 15s linear infinite",
         "circuit-pulse": "circuit-pulse 3s ease-in-out infinite",
+        "skill-reveal": "skill-reveal 0.6s ease-out forwards",
+        "icon-bounce": "icon-bounce 2s ease-in-out infinite",
+        "gradient-shift": "gradient-shift 3s ease-in-out infinite",
       },
     },
   },
