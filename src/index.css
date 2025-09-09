@@ -6,43 +6,46 @@
 
 @layer base {
   :root {
-    /* Base colors - Professional tech palette */
-    --background: 220 13% 6%;
+    /* Base colors - Dark tech palette */
+    --background: 220 15% 3%;
     --foreground: 210 40% 98%;
 
-    --card: 220 13% 8%;
+    --card: 220 15% 4%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 220 13% 8%;
+    --popover: 220 15% 4%;
     --popover-foreground: 210 40% 98%;
 
-    /* Primary - Deep navy blue */
-    --primary: 218 100% 25%;
+    /* Primary - Deep tech blue */
+    --primary: 220 100% 15%;
     --primary-foreground: 210 40% 98%;
 
-    /* Secondary - Subtle gray */
-    --secondary: 220 13% 12%;
+    /* Secondary - Dark gray */
+    --secondary: 220 15% 8%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 220 13% 12%;
+    --muted: 220 15% 8%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    /* Accent - Bright cyan for highlights */
-    --accent: 189 100% 55%;
-    --accent-foreground: 220 13% 6%;
+    /* Accent - Electric cyan for tech feel */
+    --accent: 189 100% 50%;
+    --accent-foreground: 220 15% 3%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 13% 15%;
-    --input: 220 13% 15%;
-    --ring: 189 100% 55%;
+    --border: 220 15% 12%;
+    --input: 220 15% 12%;
+    --ring: 189 100% 50%;
 
-    /* Portfolio-specific tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(218 100% 25%), hsl(189 100% 35%));
-    --card-gradient: linear-gradient(145deg, hsl(220 13% 8%), hsl(220 13% 10%));
-    --accent-glow: 189 100% 55%;
+    /* Tech-focused tokens */
+    --hero-gradient: linear-gradient(135deg, hsl(220 15% 3%), hsl(220 100% 8%), hsl(189 100% 15%));
+    --card-gradient: linear-gradient(145deg, hsl(220 15% 4%), hsl(220 15% 6%));
+    --accent-glow: 189 100% 50%;
     --text-gradient: linear-gradient(135deg, hsl(210 40% 98%), hsl(189 100% 70%));
+    --tech-grid: linear-gradient(90deg, hsl(189 100% 50% / 0.1) 1px, transparent 1px), linear-gradient(hsl(189 100% 50% / 0.1) 1px, transparent 1px);
+    --matrix-green: 120 100% 50%;
+    --neon-purple: 270 100% 70%;
     
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
