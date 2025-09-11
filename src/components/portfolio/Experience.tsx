@@ -8,10 +8,106 @@ import {
   TrendingUp, 
   Code, 
   Brain,
-  Zap
+  Zap,
+  CheckCircle,
+  Sparkles,
+  Cpu,
+  Terminal,
+  Database
 } from "lucide-react";
 
 const Experience = () => {
+  // Color mapping for proper Tailwind class generation
+  const getColorClasses = (color) => {
+    const colorMap = {
+      'accent': {
+        border: 'border-accent/30',
+        borderHover: 'hover:border-accent/60',
+        bg: 'bg-gradient-to-br from-card/80 via-accent/5 to-card/60',
+        shadow: 'hover:shadow-xl hover:shadow-accent/20',
+        gradientLine: 'from-accent via-accent/80 to-accent/40',
+        gradientTop: 'from-transparent via-accent/60 to-transparent',
+        cornerHighlight: 'from-accent/10 to-transparent',
+        iconBg: 'from-accent/20 via-accent/10 to-accent/5 border-accent/30 shadow-accent/20 group-hover:shadow-accent/40',
+        iconColor: 'text-accent',
+        titleHover: 'group-hover:text-accent',
+        companyColor: 'text-accent',
+        dateBadge: 'bg-accent/10 text-accent',
+        bulletBg: 'bg-gradient-to-r from-accent/5 to-accent/10 border-accent/20 hover:border-accent/40 hover:shadow-md hover:shadow-accent/10',
+        bulletDot: 'bg-accent group-hover/point:ring-4 group-hover/point:ring-accent/20',
+        bulletPulse: 'bg-accent',
+        bulletHighlight: 'from-accent/0 via-accent/5 to-accent/0',
+        impactBg: 'bg-gradient-to-br from-accent/8 to-accent/12 border-accent/25 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/10',
+        impactText: 'text-accent',
+        badgeBg: 'bg-accent/10 text-accent border-accent/30 hover:bg-accent/20 hover:border-accent/60 hover:shadow-md hover:shadow-accent/20'
+      },
+      'green': {
+        border: 'border-green-500/30',
+        borderHover: 'hover:border-green-500/60',
+        bg: 'bg-gradient-to-br from-card/80 via-green-500/5 to-card/60',
+        shadow: 'hover:shadow-xl hover:shadow-green-500/20',
+        gradientLine: 'from-green-500 via-green-500/80 to-green-500/40',
+        gradientTop: 'from-transparent via-green-500/60 to-transparent',
+        cornerHighlight: 'from-green-500/10 to-transparent',
+        iconBg: 'from-green-500/20 via-green-500/10 to-green-500/5 border-green-500/30 shadow-green-500/20 group-hover:shadow-green-500/40',
+        iconColor: 'text-green-500',
+        titleHover: 'group-hover:text-green-500',
+        companyColor: 'text-green-500',
+        dateBadge: 'bg-green-500/10 text-green-500',
+        bulletBg: 'bg-gradient-to-r from-green-500/5 to-green-500/10 border-green-500/20 hover:border-green-500/40 hover:shadow-md hover:shadow-green-500/10',
+        bulletDot: 'bg-green-500 group-hover/point:ring-4 group-hover/point:ring-green-500/20',
+        bulletPulse: 'bg-green-500',
+        bulletHighlight: 'from-green-500/0 via-green-500/5 to-green-500/0',
+        impactBg: 'bg-gradient-to-br from-green-500/8 to-green-500/12 border-green-500/25 hover:border-green-500/50 hover:shadow-lg hover:shadow-green-500/10',
+        impactText: 'text-green-500',
+        badgeBg: 'bg-green-500/10 text-green-500 border-green-500/30 hover:bg-green-500/20 hover:border-green-500/60 hover:shadow-md hover:shadow-green-500/20'
+      },
+      'blue': {
+        border: 'border-blue-500/30',
+        borderHover: 'hover:border-blue-500/60',
+        bg: 'bg-gradient-to-br from-card/80 via-blue-500/5 to-card/60',
+        shadow: 'hover:shadow-xl hover:shadow-blue-500/20',
+        gradientLine: 'from-blue-500 via-blue-500/80 to-blue-500/40',
+        gradientTop: 'from-transparent via-blue-500/60 to-transparent',
+        cornerHighlight: 'from-blue-500/10 to-transparent',
+        iconBg: 'from-blue-500/20 via-blue-500/10 to-blue-500/5 border-blue-500/30 shadow-blue-500/20 group-hover:shadow-blue-500/40',
+        iconColor: 'text-blue-500',
+        titleHover: 'group-hover:text-blue-500',
+        companyColor: 'text-blue-500',
+        dateBadge: 'bg-blue-500/10 text-blue-500',
+        bulletBg: 'bg-gradient-to-r from-blue-500/5 to-blue-500/10 border-blue-500/20 hover:border-blue-500/40 hover:shadow-md hover:shadow-blue-500/10',
+        bulletDot: 'bg-blue-500 group-hover/point:ring-4 group-hover/point:ring-blue-500/20',
+        bulletPulse: 'bg-blue-500',
+        bulletHighlight: 'from-blue-500/0 via-blue-500/5 to-blue-500/0',
+        impactBg: 'bg-gradient-to-br from-blue-500/8 to-blue-500/12 border-blue-500/25 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10',
+        impactText: 'text-blue-500',
+        badgeBg: 'bg-blue-500/10 text-blue-500 border-blue-500/30 hover:bg-blue-500/20 hover:border-blue-500/60 hover:shadow-md hover:shadow-blue-500/20'
+      },
+      'orange': {
+        border: 'border-orange-500/30',
+        borderHover: 'hover:border-orange-500/60',
+        bg: 'bg-gradient-to-br from-card/80 via-orange-500/5 to-card/60',
+        shadow: 'hover:shadow-xl hover:shadow-orange-500/20',
+        gradientLine: 'from-orange-500 via-orange-500/80 to-orange-500/40',
+        gradientTop: 'from-transparent via-orange-500/60 to-transparent',
+        cornerHighlight: 'from-orange-500/10 to-transparent',
+        iconBg: 'from-orange-500/20 via-orange-500/10 to-orange-500/5 border-orange-500/30 shadow-orange-500/20 group-hover:shadow-orange-500/40',
+        iconColor: 'text-orange-500',
+        titleHover: 'group-hover:text-orange-500',
+        companyColor: 'text-orange-500',
+        dateBadge: 'bg-orange-500/10 text-orange-500',
+        bulletBg: 'bg-gradient-to-r from-orange-500/5 to-orange-500/10 border-orange-500/20 hover:border-orange-500/40 hover:shadow-md hover:shadow-orange-500/10',
+        bulletDot: 'bg-orange-500 group-hover/point:ring-4 group-hover/point:ring-orange-500/20',
+        bulletPulse: 'bg-orange-500',
+        bulletHighlight: 'from-orange-500/0 via-orange-500/5 to-orange-500/0',
+        impactBg: 'bg-gradient-to-br from-orange-500/8 to-orange-500/12 border-orange-500/25 hover:border-orange-500/50 hover:shadow-lg hover:shadow-orange-500/10',
+        impactText: 'text-orange-500',
+        badgeBg: 'bg-orange-500/10 text-orange-500 border-orange-500/30 hover:bg-orange-500/20 hover:border-orange-500/60 hover:shadow-md hover:shadow-orange-500/20'
+      }
+    };
+    return colorMap[color] || colorMap['accent'];
+  };
+
   const experiences = [
     {
       title: "Researcher", 
@@ -36,7 +132,7 @@ const Experience = () => {
       location: "Remote",
       period: "Apr 2025 – Present",
       year: "2025",
-      color: "green-500",
+      color: "green",
       icon: Code,
       keyPoints: [
         "Built high-performance REST APIs with real-time gift contribution endpoints",
@@ -53,7 +149,7 @@ const Experience = () => {
       location: "Remote", 
       period: "May 2025 – Aug 2025",
       year: "2025",
-      color: "blue-500",
+      color: "blue",
       icon: Brain,
       keyPoints: [
         "Fine-tuned XLM-Roberta, Longformer, and LSTM models with PyTorch",
@@ -70,7 +166,7 @@ const Experience = () => {
       location: "Remote",
       period: "Jun 2024 – Sep 2024",
       year: "2024",
-      color: "orange-500",
+      color: "orange",
       icon: Zap,
       keyPoints: [
         "Designed RAG pipelines for natural language business data querying",
@@ -84,29 +180,54 @@ const Experience = () => {
   ];
 
   return (
-    <section className="py-16 px-6 relative" id="experience">
-      {/* Clean Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background/98 to-background/95" />
+    <section className="py-16 px-6 relative overflow-hidden" id="experience">
+      {/* Elegant Dotted Background */}
+      <div className="absolute inset-0 z-0">
+        {/* Base gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-background/98 to-background" />
+        
+        {/* Subtle dotted pattern */}
+        <div 
+          className="absolute inset-0 opacity-[0.015]"
+          style={{
+            backgroundImage: 'radial-gradient(circle, hsl(189 100% 50%) 1px, transparent 1px)',
+            backgroundSize: '30px 30px'
+          }}
+        />
+        
+        {/* Flowing lines */}
+        <div className="absolute inset-0">
+          <svg className="w-full h-full opacity-[0.02]" viewBox="0 0 1000 1000" preserveAspectRatio="none">
+            <path d="M0,300 Q250,200 500,300 T1000,300" stroke="currentColor" strokeWidth="1" fill="none" className="text-accent" />
+            <path d="M0,600 Q250,500 500,600 T1000,600" stroke="currentColor" strokeWidth="1" fill="none" className="text-accent" />
+            <path d="M0,800 Q250,700 500,800 T1000,800" stroke="currentColor" strokeWidth="1" fill="none" className="text-accent" />
+          </svg>
+        </div>
+        
+        {/* Minimal floating elements */}
+        <div className="absolute top-1/4 right-1/4 w-1 h-1 bg-accent/20 rounded-full animate-pulse" />
+        <div className="absolute bottom-1/3 left-1/3 w-1 h-1 bg-accent/20 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
+        <div className="absolute top-2/3 right-1/3 w-1 h-1 bg-accent/20 rounded-full animate-pulse" style={{ animationDelay: '2s' }} />
+      </div>
 
-      <div className="max-w-5xl mx-auto relative">
-        {/* Header */}
+      <div className="max-w-5xl mx-auto relative z-10">
+        {/* Clean Header */}
         <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-4 mb-4">
-            <div className="h-px w-16 bg-gradient-to-r from-transparent to-accent"></div>
-            <h2 className="text-4xl md:text-5xl font-bold">
-              <span className="text-gradient">Experience</span>
-            </h2>
-            <div className="h-px w-16 bg-gradient-to-l from-transparent to-accent"></div>
+          <div className="inline-flex items-center gap-3 mb-4">
+            <div className="h-px w-12 bg-gradient-to-r from-transparent to-accent/60"></div>
+            <h2 className="text-4xl md:text-5xl font-bold text-gradient">Experience</h2>
+            <div className="h-px w-12 bg-gradient-to-l from-transparent to-accent/60"></div>
           </div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Building AI/ML solutions and leading development teams
           </p>
         </div>
 
-        {/* Experience Grid */}
-        <div className="space-y-8">
+        {/* Experience Grid - Enhanced Design */}
+        <div className="space-y-6">
           {experiences.map((exp, index) => {
             const IconComponent = exp.icon;
+            const colors = getColorClasses(exp.color);
             
             return (
               <div 
@@ -114,91 +235,129 @@ const Experience = () => {
                 className="relative"
                 style={{
                   opacity: 0,
-                  animation: 'fade-in-up 0.8s ease-out forwards',
-                  animationDelay: `${index * 0.15}s`
+                  animation: 'fade-in-up 0.6s ease-out forwards',
+                  animationDelay: `${index * 0.1}s`
                 }}
               >
-                {/* Experience Card */}
-                <div className="w-full">
-                  <Card className="group relative overflow-hidden border border-border/30 transition-all duration-300 hover:shadow-lg hover:shadow-accent/10 bg-card/80 backdrop-blur-sm">
-                    {/* Accent Bar */}
-                    <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${exp.color === 'accent' ? 'from-accent to-accent/80' : `from-${exp.color} to-${exp.color}/80`}`} />
-                    
-                    <CardContent className="p-8">
-                      {/* Header Row */}
-                      <div className="flex items-start justify-between mb-6">
-                        <div className="flex items-start gap-4">
-                          <div className={`
-                            w-14 h-14 rounded-xl bg-gradient-to-br ${exp.color === 'accent' ? 'from-accent/20 to-accent/10 border-accent/20' : `from-${exp.color}/20 to-${exp.color}/10 border-${exp.color}/20`}
-                            border flex items-center justify-center transition-all duration-300
-                            group-hover:scale-105
-                          `}>
-                            <IconComponent className={`h-7 w-7 ${exp.color === 'accent' ? 'text-accent' : `text-${exp.color}`}`} />
-                          </div>
-                          <div className="flex-1">
-                            <h3 className={`text-2xl font-bold text-foreground group-hover:${exp.color === 'accent' ? 'text-accent' : `text-${exp.color}`} transition-colors duration-300 mb-2`}>
-                              {exp.title}
-                            </h3>
-                            <p className={`${exp.color === 'accent' ? 'text-accent' : `text-${exp.color}`} font-semibold text-lg mb-3`}>
-                              {exp.company}
-                            </p>
-                          </div>
+                {/* Experience Card - Enhanced */}
+                <Card className={`
+                  group relative overflow-hidden border-2 transition-all duration-500 backdrop-blur-sm
+                  ${colors.border} ${colors.bg} ${colors.borderHover} ${colors.shadow}
+                  hover:scale-[1.02] hover:-translate-y-1
+                `}>
+                  {/* Enhanced accent elements */}
+                  <div className={`absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b ${colors.gradientLine}`} />
+                  
+                  {/* Subtle top accent */}
+                  <div className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r ${colors.gradientTop}`} />
+                  
+                  {/* Corner highlight */}
+                  <div className={`absolute top-0 right-0 w-16 h-16 bg-gradient-to-bl ${colors.cornerHighlight} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
+                  
+                  <CardContent className="p-6 relative z-10">
+                    {/* Enhanced Header */}
+                    <div className="flex items-start justify-between mb-5">
+                      <div className="flex items-start gap-4 flex-1">
+                        <div className={`
+                          w-14 h-14 rounded-xl bg-gradient-to-br shadow-lg flex items-center justify-center transition-all duration-500
+                          ${colors.iconBg}
+                          border-2 group-hover:scale-110 group-hover:rotate-3
+                        `}>
+                          <IconComponent className={`h-7 w-7 ${colors.iconColor} transition-all duration-300`} />
                         </div>
-                        <div className="text-right">
-                          <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
-                            <Calendar className="h-4 w-4" />
-                            <span className="font-medium">{exp.period}</span>
-                          </div>
-                          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                            <MapPin className="h-4 w-4" />
-                            <span className="font-medium">{exp.location}</span>
+                        <div className="flex-1">
+                          <h3 className={`text-xl font-bold mb-1 transition-colors duration-300 ${colors.titleHover}`}>
+                            {exp.title}
+                          </h3>
+                          <p className={`font-semibold text-lg mb-3 ${colors.companyColor}`}>
+                            {exp.company}
+                          </p>
+                          <div className="flex items-center gap-4 text-sm">
+                            <div className={`flex items-center gap-2 px-2 py-1 rounded-full ${colors.dateBadge}`}>
+                              <Calendar className="h-3 w-3" />
+                              <span className="font-medium">{exp.period}</span>
+                            </div>
+                            <div className="flex items-center gap-1 text-muted-foreground">
+                              <MapPin className="h-3 w-3" />
+                              <span>{exp.location}</span>
+                            </div>
                           </div>
                         </div>
                       </div>
+                    </div>
 
-                      {/* Key Points Grid */}
-                      <div className="grid md:grid-cols-2 gap-4 mb-6">
+                    {/* Enhanced Key Points */}
+                    <div className="mb-5">
+                      <div className="flex items-center gap-2 mb-3">
+                        <CheckCircle className={`h-4 w-4 ${colors.iconColor}`} />
+                        <span className="text-sm font-semibold text-foreground uppercase tracking-wider">Key Achievements</span>
+                      </div>
+                      <div className="grid md:grid-cols-2 gap-3">
                         {exp.keyPoints.map((point, i) => (
-                          <div key={i} className="flex items-start gap-3 p-3 rounded-lg bg-secondary/30 border border-border/20">
-                            <div className={`w-2 h-2 rounded-full ${exp.color === 'accent' ? 'bg-accent' : `bg-${exp.color}`} mt-2.5 flex-shrink-0`} />
-                            <span className="text-sm text-muted-foreground leading-relaxed">{point}</span>
+                          <div key={i} className={`
+                            group/point relative flex items-start gap-3 p-4 rounded-xl border transition-all duration-300
+                            ${colors.bulletBg}
+                            hover:scale-[1.02]
+                          `}>
+                            {/* Enhanced bullet point */}
+                            <div className="relative mt-1.5">
+                              <div className={`w-2 h-2 rounded-full transition-all duration-300 ${colors.bulletDot}`} />
+                              <div className={`absolute inset-0 w-2 h-2 rounded-full animate-pulse ${colors.bulletPulse} opacity-0 group-hover/point:opacity-30`} />
+                            </div>
+                            <span className="text-sm text-foreground leading-relaxed font-medium flex-1">{point}</span>
+                            
+                            {/* Subtle highlight effect */}
+                            <div className={`absolute inset-0 rounded-xl bg-gradient-to-r ${colors.bulletHighlight} opacity-0 group-hover/point:opacity-100 transition-opacity duration-300`} />
                           </div>
                         ))}
                       </div>
+                    </div>
 
-                      {/* Bottom Row */}
-                      <div className="flex flex-col md:flex-row gap-4 justify-between items-start">
-                        {/* Impact */}
-                        <div className={`flex-1 p-4 rounded-lg ${exp.color === 'accent' ? 'bg-accent/5 border-accent/10' : `bg-${exp.color}/5 border-${exp.color}/10`} border`}>
-                          <div className="flex items-center gap-2 mb-2">
-                            <TrendingUp className={`h-4 w-4 ${exp.color === 'accent' ? 'text-accent' : `text-${exp.color}`}`} />
-                            <span className="text-sm font-semibold text-foreground">Impact & Results</span>
-                          </div>
-                          <p className={`${exp.color === 'accent' ? 'text-accent' : `text-${exp.color}`} font-medium text-sm`}>
-                            {exp.impact}
-                          </p>
+                    {/* Enhanced Bottom Section */}
+                    <div className="flex flex-col lg:flex-row gap-5 items-start">
+                      {/* Enhanced Impact Section */}
+                      <div className={`
+                        flex-1 p-4 rounded-xl border-2 transition-all duration-300
+                        ${colors.impactBg}
+                        hover:scale-[1.01]
+                      `}>
+                        <div className="flex items-center gap-2 mb-2">
+                          <TrendingUp className={`h-4 w-4 ${colors.iconColor}`} />
+                          <span className="text-sm font-bold text-foreground uppercase tracking-wider">Impact & Results</span>
                         </div>
+                        <p className={`text-sm ${colors.impactText} font-semibold leading-relaxed`}>
+                          {exp.impact}
+                        </p>
+                      </div>
 
-                        {/* Technologies */}
-                        <div className="flex flex-wrap gap-2 max-w-md">
-                          {exp.tags.map((tag, i) => (
+                      {/* Enhanced Technologies */}
+                      <div className="lg:max-w-sm">
+                        <div className="flex items-center gap-2 mb-3">
+                          <Code className={`h-4 w-4 ${colors.iconColor}`} />
+                          <span className="text-sm font-semibold text-foreground uppercase tracking-wider">Tech Stack</span>
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                          {exp.tags.map((tag, tagIndex) => (
                             <Badge 
                               key={tag}
                               variant="secondary"
                               className={`
-                                text-xs bg-secondary/60 hover:${exp.color === 'accent' ? 'bg-accent/10 text-accent border-accent/20' : `bg-${exp.color}/10 text-${exp.color} border-${exp.color}/20`}
-                                transition-all duration-300 border border-transparent
-                                px-2.5 py-1 font-medium
+                                text-xs px-3 py-1.5 rounded-full border-2 font-semibold transition-all duration-300
+                                ${colors.badgeBg}
+                                hover:scale-110 hover:-translate-y-0.5
                               `}
+                              style={{
+                                animationDelay: `${tagIndex * 0.1}s`
+                              }}
                             >
                               {tag}
                             </Badge>
                           ))}
                         </div>
                       </div>
-                    </CardContent>
-                  </Card>
-                </div>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
             );
           })}
