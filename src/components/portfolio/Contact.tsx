@@ -1,143 +1,128 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+
+const contactItems = [
+  {
+    label: "Email",
+    value: "1hashemfarhan@gmail.com",
+    href: "mailto:1hashemfarhan@gmail.com",
+    icon: Mail,
+  },
+  {
+    label: "Phone",
+    value: "(812) 778-0699",
+    href: "tel:8127780699",
+    icon: Phone,
+  },
+  {
+    label: "Location",
+    value: "Bloomington, Indiana",
+    href: "",
+    icon: MapPin,
+  },
+];
 
 const Contact = () => {
-  const contactInfo = [
-    {
-      icon: <Mail className="h-5 w-5" />,
-      label: "Email",
-      value: "1hashemfarhan@gmail.com",
-      href: "mailto:1hashemfarhan@gmail.com"
-    },
-    {
-      icon: <Phone className="h-5 w-5" />,
-      label: "Phone", 
-      value: "(812) 778-0699",
-      href: "tel:8127780699"
-    },
-    {
-      icon: <MapPin className="h-5 w-5" />,
-      label: "Location",
-      value: "Bloomington, IN",
-      href: null
-    }
-  ];
-
   return (
-    <section className="py-20 px-6" id="contact">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-gradient">Let's Connect</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Ready to collaborate on AI/ML projects or discuss opportunities in software engineering
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Contact Information */}
-          <Card className="card-gradient border-border/50 hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:shadow-accent/10">
-            <CardHeader>
-              <CardTitle className="text-2xl mb-4">Get In Touch</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              {contactInfo.map((info, index) => (
-                <div key={index} className="flex items-center gap-4">
-                  <div className="p-3 rounded-lg bg-accent/10 border border-accent/20">
-                    <div className="text-accent">
-                      {info.icon}
-                    </div>
-                  </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground uppercase tracking-wide">
-                      {info.label}
-                    </p>
-                    {info.href ? (
-                      <a 
-                        href={info.href}
-                        className="text-foreground hover:text-accent transition-colors font-medium"
-                      >
-                        {info.value}
-                      </a>
-                    ) : (
-                      <p className="text-foreground font-medium">{info.value}</p>
-                    )}
-                  </div>
-                </div>
-              ))}
-
-              <div className="pt-6 border-t border-border/50">
-                <p className="text-sm text-muted-foreground uppercase tracking-wide mb-4">
-                  Connect Online
-                </p>
-                <div className="flex gap-4">
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
-                    className="flex-1"
-                    onClick={() => window.open('https://github.com/HashemFarhan', '_blank')}
-                  >
-                    <Github className="h-4 w-4 mr-2" />
-                    GitHub
-                  </Button>
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
-                    className="flex-1"
-                    onClick={() => window.open('https://www.linkedin.com/in/hash-oo7/', '_blank')}
-                  >
-                    <Linkedin className="h-4 w-4 mr-2" />
-                    LinkedIn
-                  </Button>
-                </div>
+    <section id="contact" className="section-shell pb-24">
+      <div className="section-inner">
+        <div className="panel overflow-hidden">
+          <div className="grid gap-0 lg:grid-cols-[1fr_0.9fr]">
+            <div className="border-b border-white/8 p-8 lg:border-b-0 lg:border-r lg:p-10">
+              <div className="section-kicker">
+                <span className="eyebrow-line" />
+                Contact
               </div>
-            </CardContent>
-          </Card>
-
-          {/* Call to Action */}
-          <Card className="card-gradient border-border/50 hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:shadow-accent/10">
-            <CardHeader>
-              <CardTitle className="text-2xl mb-4">Work Together</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <p className="text-muted-foreground leading-relaxed">
-                I'm always interested in discussing new opportunities, research collaborations, 
-                or innovative AI/ML projects. Whether you're looking for:
+              <h2 className="text-3xl font-semibold text-foreground md:text-4xl">
+                Open to meaningful engineering, research, and product conversations.
+              </h2>
+              <p className="mt-5 max-w-xl text-base leading-8 text-muted-foreground">
+                If you are hiring, exploring a collaboration, or building something ambitious in
+                AI and software, I would be glad to connect.
               </p>
-              
-              <ul className="space-y-3">
-                <li className="flex items-start gap-2">
-                  <span className="text-accent mt-1 text-sm">●</span>
-                  <span className="text-sm">Machine Learning Engineering expertise</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-accent mt-1 text-sm">●</span>
-                  <span className="text-sm">Full-stack development skills</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-accent mt-1 text-sm">●</span>
-                  <span className="text-sm">Research collaboration opportunities</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-accent mt-1 text-sm">●</span>
-                  <span className="text-sm">Technical consulting and mentorship</span>
-                </li>
-              </ul>
 
-              <div className="pt-6">
-                <Button 
-                  className="w-full" 
-                  size="lg"
-                  onClick={() => window.location.href = 'mailto:1hashemfarhan@gmail.com'}
-                >
-                  <Mail className="h-4 w-4 mr-2" />
-                  Send Message
-                </Button>
+              <div className="mt-8 space-y-4">
+                {contactItems.map((item) => {
+                  const Icon = item.icon;
+
+                  return (
+                    <div
+                      key={item.label}
+                      className="flex items-start gap-4 rounded-3xl border border-white/8 bg-white/[0.03] p-4"
+                    >
+                      <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-accent/20 bg-accent/10">
+                        <Icon className="h-4 w-4 text-accent" />
+                      </div>
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                          {item.label}
+                        </p>
+                        {item.href ? (
+                          <a
+                            href={item.href}
+                            className="mt-1 block text-sm font-medium text-foreground transition-colors hover:text-accent"
+                          >
+                            {item.value}
+                          </a>
+                        ) : (
+                          <p className="mt-1 text-sm font-medium text-foreground">{item.value}</p>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
-            </CardContent>
-          </Card>
+            </div>
+
+            <div className="section-wash p-8 lg:p-10">
+              <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent/80">
+                Preferred engagements
+              </p>
+              <div className="mt-6 space-y-3">
+                {[
+                  "Machine learning engineering roles",
+                  "Applied AI and NLP product work",
+                  "Research collaborations with clear execution goals",
+                  "Software engineering opportunities with strong technical ownership",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-2xl border border-white/8 bg-background/30 px-4 py-4"
+                  >
+                    <p className="text-sm leading-7 text-muted-foreground">{item}</p>
+                  </div>
+                ))}
+              </div>
+
+              <a
+                href="mailto:1hashemfarhan@gmail.com"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-glow transition-transform hover:-translate-y-0.5"
+              >
+                Start a conversation
+                <ArrowRight className="h-4 w-4" />
+              </a>
+
+              <div className="mt-8 flex gap-3">
+                <a
+                  href="https://github.com/HashemFarhan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-white/10 px-4 py-3 text-sm font-medium text-foreground transition-colors hover:bg-white/8"
+                >
+                  <Github className="h-4 w-4" />
+                  GitHub
+                </a>
+                <a
+                  href="https://www.linkedin.com/in/hash-oo7/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-white/10 px-4 py-3 text-sm font-medium text-foreground transition-colors hover:bg-white/8"
+                >
+                  <Linkedin className="h-4 w-4" />
+                  LinkedIn
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

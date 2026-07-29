@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const Navigation = () => {
@@ -7,18 +6,17 @@ const Navigation = () => {
   const [activeSection, setActiveSection] = useState("hero");
 
   const navItems = [
-    { label: "Home", href: "#hero" },
-    { label: "Skills", href: "#skills" },
+    { label: "Overview", href: "#hero" },
+    { label: "Capabilities", href: "#skills" },
     { label: "Experience", href: "#experience" },
-    // { label: "Projects", href: "#projects" },
     { label: "Education", href: "#education" },
-    { label: "Contact", href: "#contact" }
+    { label: "Contact", href: "#contact" },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navItems.map(item => item.href.slice(1));
-      const scrollPosition = window.scrollY + 100;
+      const sections = navItems.map((item) => item.href.slice(1));
+      const scrollPosition = window.scrollY + 140;
 
       for (const section of sections.reverse()) {
         const element = document.getElementById(section);
@@ -29,6 +27,7 @@ const Navigation = () => {
       }
     };
 
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -36,73 +35,97 @@ const Navigation = () => {
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
     setIsOpen(false);
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="font-bold text-xl">
-            <span className="text-gradient">HF</span>
-          </div>
+    <nav className="fixed inset-x-0 top-0 z-50 px-4 pt-4">
+      <div className="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-white/10 bg-background/72 px-4 py-3 shadow-[0_16px_40px_-28px_rgba(0,0,0,0.85)] backdrop-blur-xl md:px-6">
+        <button
+          type="button"
+          onClick={() => scrollToSection("#hero")}
+          className="flex items-center gap-3 text-left"
+        >
+          <span className="flex h-10 w-10 items-center justify-center rounded-full border border-accent/30 bg-accent/10 text-sm font-bold text-accent">
+            HF
+          </span>
+          <span className="hidden sm:block">
+            <span className="block text-sm font-semibold text-foreground">Hashem Farhan</span>
+            <span className="block text-xs uppercase tracking-[0.22em] text-muted-foreground">
+              Machine Learning Engineer
+            </span>
+          </span>
+        </button>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
-            {navItems.map((item) => (
-              <Button
+        <div className="hidden items-center gap-1 md:flex">
+          {navItems.map((item) => {
+            const isActive = activeSection === item.href.slice(1);
+
+            return (
+              <button
                 key={item.label}
-                variant="ghost"
-                size="sm"
+                type="button"
                 onClick={() => scrollToSection(item.href)}
-                className={`transition-all duration-300 ${
-                  activeSection === item.href.slice(1)
-                    ? "text-accent bg-accent/10"
+                className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                  isActive
+                    ? "bg-white/8 text-foreground"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {item.label}
-              </Button>
-            ))}
-          </div>
-
-          {/* Mobile menu button */}
-          <Button
-            variant="ghost"
-            size="sm"
-            className="md:hidden"
-            onClick={() => setIsOpen(!isOpen)}
+              </button>
+            );
+          })}
+          <a
+            href="mailto:1hashemfarhan@gmail.com"
+            className="ml-3 rounded-full bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground transition-transform hover:-translate-y-0.5"
           >
-            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </Button>
+            Get in touch
+          </a>
         </div>
 
-        {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden py-4 border-t border-border/50">
-            <div className="flex flex-col space-y-2">
-              {navItems.map((item) => (
-                <Button
+        <button
+          type="button"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-foreground md:hidden"
+          onClick={() => setIsOpen((current) => !current)}
+          aria-label="Toggle navigation"
+        >
+          {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </button>
+      </div>
+
+      {isOpen && (
+        <div className="mx-auto mt-3 max-w-6xl rounded-[1.5rem] border border-white/10 bg-background/94 p-4 shadow-[0_24px_50px_-28px_rgba(0,0,0,0.9)] backdrop-blur-xl md:hidden">
+          <div className="flex flex-col gap-2">
+            {navItems.map((item) => {
+              const isActive = activeSection === item.href.slice(1);
+
+              return (
+                <button
                   key={item.label}
-                  variant="ghost"
-                  size="sm"
+                  type="button"
                   onClick={() => scrollToSection(item.href)}
-                  className={`justify-start transition-all duration-300 ${
-                    activeSection === item.href.slice(1)
-                      ? "text-accent bg-accent/10"
+                  className={`rounded-2xl px-4 py-3 text-left text-sm font-medium transition-colors ${
+                    isActive
+                      ? "bg-white/8 text-foreground"
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
                   {item.label}
-                </Button>
-              ))}
-            </div>
+                </button>
+              );
+            })}
+            <a
+              href="mailto:1hashemfarhan@gmail.com"
+              className="mt-2 rounded-2xl bg-accent px-4 py-3 text-center text-sm font-semibold text-accent-foreground"
+            >
+              Get in touch
+            </a>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </nav>
   );
 };

@@ -1,139 +1,147 @@
-import { ArrowDown, Github, Linkedin, Mail, Phone, Code, Terminal, Cpu } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowRight, Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+
+const highlights = [
+  "Predictive modeling and applied machine learning",
+  "Research partnerships across academic and industry teams",
+  "Production-minded full-stack engineering",
+];
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
-      {/* Tech Grid Background */}
-      <div className="absolute inset-0 z-0">
-        <div 
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage: 'linear-gradient(90deg, hsl(189 100% 50% / 0.1) 1px, transparent 1px), linear-gradient(hsl(189 100% 50% / 0.1) 1px, transparent 1px)',
-            backgroundSize: '50px 50px'
-          }}
-        />
-        <div className="absolute inset-0 hero-gradient opacity-95" />
-      </div>
+    <section
+      id="hero"
+      className="relative overflow-hidden px-6 pb-16 pt-32 md:pb-24 md:pt-40"
+    >
+      <div className="absolute inset-0 hero-gradient" />
+      <div className="absolute inset-0 grid-fade opacity-50" />
+      <div className="absolute inset-x-0 top-0 h-48 bg-gradient-to-b from-accent/10 to-transparent" />
 
-      {/* Matrix Rain Effect */}
-      <div className="absolute inset-0 z-5 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute text-accent/20 text-xs font-mono animate-matrix-rain"
-            style={{
-              left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 4}s`,
-              animationDuration: `${4 + Math.random() * 4}s`
-            }}
-          >
-            {['01', '10', '11', '00', '101', '010'][Math.floor(Math.random() * 6)]}
-          </div>
-        ))}
-      </div>
-
-      {/* Circuit Board Elements */}
-      <div className="absolute inset-0 z-10">
-        {/* Tech Particles */}
-        <div className="absolute top-1/4 left-1/4 w-3 h-3 border border-accent rounded animate-circuit-pulse" />
-        <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-accent rounded-full animate-float opacity-60" style={{ animationDelay: '0.5s' }} />
-        <div className="absolute bottom-1/3 left-1/3 w-4 h-4 border-2 border-accent/40 rotate-45 animate-float" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-1/2 right-1/3 w-1 h-8 bg-gradient-to-b from-accent to-transparent animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-8 h-1 bg-gradient-to-r from-accent to-transparent animate-pulse" style={{ animationDelay: '1.5s' }} />
-        
-        {/* Geometric Tech Shapes */}
-        <div className="absolute top-20 right-20">
-          <Cpu className="h-8 w-8 text-accent/30 animate-pulse" />
-        </div>
-        <div className="absolute bottom-20 left-20">
-          <Terminal className="h-6 w-6 text-accent/40 animate-float" />
-        </div>
-        <div className="absolute top-1/2 left-10">
-          <Code className="h-10 w-10 text-accent/20 animate-circuit-pulse" />
-        </div>
-      </div>
-
-      {/* Scrolling Code Background */}
-      <div className="absolute bottom-10 left-0 right-0 z-5 overflow-hidden opacity-20">
-        <div className="animate-code-scroll whitespace-nowrap text-accent/30 font-mono text-sm">
-          const skills = ['Python', 'ML', 'TensorFlow', 'React', 'PostgreSQL']; // Machine Learning Engineer
-        </div>
-      </div>
-
-      <div className="relative z-20 text-center px-6 max-w-4xl mx-auto">
-        <div className="animate-fade-in-up">
-          {/* Glitch Effect on Name */}
-          <div className="relative mb-6">
-            <h1 className="text-5xl md:text-7xl font-bold relative">
-              <span className="text-gradient relative z-10">Hashem Farhan</span>
-              <span className="absolute inset-0 text-accent/20 animate-glitch z-0" style={{ animationDelay: '0.1s' }}>
-                Hashem Farhan
-              </span>
-            </h1>
-            <div className="absolute -inset-2 bg-accent/5 blur-xl animate-pulse-glow" />
-          </div>
-          
-          <div className="relative mb-8">
-            <h2 className="text-2xl md:text-3xl text-muted-foreground font-light flex items-center justify-center gap-3">
-              <Terminal className="h-6 w-6 text-accent animate-pulse" />
-              Machine Learning Engineer & Software Developer
-              <Code className="h-6 w-6 text-accent animate-pulse" style={{ animationDelay: '0.5s' }} />
-            </h2>
-          </div>
-          
-          <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto leading-relaxed">
-            Computer Science student at <span className="text-accent font-semibold">Indiana University</span> specializing in AI/ML, 
-            with experience in <span className="text-accent/80">deep learning</span>, <span className="text-accent/80">data analysis</span>, and <span className="text-accent/80">full-stack development</span>.
-          </p>
-          
-
-          <div className="flex justify-center gap-6">
-            <a 
-              href="mailto:1hashemfarhan@gmail.com" 
-              className="relative p-4 rounded-lg bg-card/30 border border-accent/20 backdrop-blur-sm hover:bg-accent/10 hover:border-accent/50 transition-all duration-300 hover:scale-110 group overflow-hidden"
-            >
-              <Mail className="h-5 w-5 text-accent group-hover:animate-pulse relative z-10" />
-              <div className="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/10 to-accent/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-            </a>
-            <a 
-              href="tel:8127780699" 
-              className="relative p-4 rounded-lg bg-card/30 border border-accent/20 backdrop-blur-sm hover:bg-accent/10 hover:border-accent/50 transition-all duration-300 hover:scale-110 group overflow-hidden"
-            >
-              <Phone className="h-5 w-5 text-accent group-hover:animate-pulse relative z-10" />
-              <div className="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/10 to-accent/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-            </a>
-            <a 
-              href="https://github.com/HashemFarhan"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative p-4 rounded-lg bg-card/30 border border-accent/20 backdrop-blur-sm hover:bg-accent/10 hover:border-accent/50 transition-all duration-300 hover:scale-110 group overflow-hidden"
-            >
-              <Github className="h-5 w-5 text-accent group-hover:animate-pulse relative z-10" />
-              <div className="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/10 to-accent/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-            </a>
-            <a 
-              href="https://www.linkedin.com/in/hash-oo7/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative p-4 rounded-lg bg-card/30 border border-accent/20 backdrop-blur-sm hover:bg-accent/10 hover:border-accent/50 transition-all duration-300 hover:scale-110 group overflow-hidden"
-            >
-              <Linkedin className="h-5 w-5 text-accent group-hover:animate-pulse relative z-10" />
-              <div className="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/10 to-accent/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Enhanced Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="flex flex-col items-center gap-2">
-          <div className="text-xs text-accent/60 font-mono uppercase tracking-wider">Explore</div>
-          <div className="relative">
-            <div className="animate-bounce">
-              <ArrowDown className="h-6 w-6 text-accent" />
+      <div className="section-inner relative">
+        <div className="grid items-end gap-12 lg:grid-cols-[1.5fr_0.9fr]">
+          <div className="animate-fade-in-up">
+            <div className="section-kicker">
+              <span className="eyebrow-line" />
+              Bloomington, Indiana
             </div>
-            <div className="absolute inset-0 bg-accent/20 blur-md animate-pulse" />
+
+            <h1 className="max-w-4xl text-5xl font-semibold leading-[0.95] text-foreground md:text-7xl">
+              Building AI products and software systems with a calm, rigorous approach.
+            </h1>
+
+            <p className="mt-8 max-w-2xl text-lg leading-8 text-muted-foreground md:text-xl">
+              I am Hashem Farhan, a machine learning engineer and software developer focused on
+              practical AI, trustworthy data work, and production-ready implementation. My work
+              spans research, applied modeling, and product engineering.
+            </p>
+
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+              <a
+                href="mailto:1hashemfarhan@gmail.com"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground shadow-glow transition-transform hover:-translate-y-0.5"
+              >
+                Contact Hashem
+                <ArrowRight className="h-4 w-4" />
+              </a>
+              <a
+                href="#experience"
+                className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-white/10"
+              >
+                View experience
+              </a>
+            </div>
+
+            <div className="mt-12 grid gap-4 md:grid-cols-3">
+              {highlights.map((item) => (
+                <div key={item} className="rounded-3xl border border-white/8 bg-white/[0.03] p-4">
+                  <p className="text-sm leading-7 text-muted-foreground">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="animate-fade-in-up panel p-6 md:p-8" style={{ animationDelay: "0.1s" }}>
+            <div className="flex items-center justify-between border-b border-white/8 pb-5">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-accent/80">
+                  Profile
+                </p>
+                <h2 className="mt-3 text-2xl font-semibold text-foreground">Hashem Farhan</h2>
+              </div>
+              <span className="rounded-full border border-accent/25 bg-accent/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-accent">
+                Available
+              </span>
+            </div>
+
+            <div className="space-y-5 py-6">
+              <div className="flex items-start gap-3">
+                <MapPin className="mt-1 h-4 w-4 text-accent" />
+                <div>
+                  <p className="text-sm font-medium text-foreground">Location</p>
+                  <p className="text-sm text-muted-foreground">Bloomington, Indiana</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Mail className="mt-1 h-4 w-4 text-accent" />
+                <div>
+                  <p className="text-sm font-medium text-foreground">Email</p>
+                  <a
+                    href="mailto:1hashemfarhan@gmail.com"
+                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    1hashemfarhan@gmail.com
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <Phone className="mt-1 h-4 w-4 text-accent" />
+                <div>
+                  <p className="text-sm font-medium text-foreground">Phone</p>
+                  <a
+                    href="tel:8127780699"
+                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    (812) 778-0699
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-3xl border border-white/8 bg-white/[0.03] p-5">
+              <p className="font-mono text-xs uppercase tracking-[0.24em] text-accent/80">
+                Focus areas
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {["Machine Learning", "NLP", "Analytics", "Full-Stack", "Cloud"].map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full border border-white/10 px-3 py-1.5 text-sm text-muted-foreground"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-6 flex gap-3">
+              <a
+                href="https://github.com/HashemFarhan"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-white/10 px-4 py-3 text-sm font-medium text-foreground transition-colors hover:bg-white/8"
+              >
+                <Github className="h-4 w-4" />
+                GitHub
+              </a>
+              <a
+                href="https://www.linkedin.com/in/hash-oo7/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex flex-1 items-center justify-center gap-2 rounded-full border border-white/10 px-4 py-3 text-sm font-medium text-foreground transition-colors hover:bg-white/8"
+              >
+                <Linkedin className="h-4 w-4" />
+                LinkedIn
+              </a>
+            </div>
           </div>
         </div>
       </div>

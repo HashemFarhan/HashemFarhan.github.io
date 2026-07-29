@@ -1,214 +1,111 @@
-import { useState } from "react";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { 
-  Brain, 
-  BarChart3, 
-  Globe, 
-  Cloud, 
-  Code2, 
-  Wrench,
-  Zap,
-  TrendingUp
-} from "lucide-react";
+import { BarChart3, Brain, Cloud, Code2, Globe, Wrench } from "lucide-react";
+
+const skillCategories = [
+  {
+    title: "Machine Learning and AI",
+    description: "Model development, evaluation, and deployment for real-world use cases.",
+    icon: Brain,
+    skills: ["Python", "PyTorch", "TensorFlow", "Scikit-learn", "Hugging Face", "NLP", "Computer Vision"],
+  },
+  {
+    title: "Data and Analytics",
+    description: "Structured analysis pipelines with a focus on clarity, signal, and decision support.",
+    icon: BarChart3,
+    skills: ["SQL", "BigQuery", "PostgreSQL", "Pandas", "NumPy", "SciPy", "Seaborn"],
+  },
+  {
+    title: "Web Engineering",
+    description: "Product-facing applications that balance performance, reliability, and clean UX.",
+    icon: Globe,
+    skills: ["React", "Vue.js", "TypeScript", "JavaScript", "Laravel", "Flask", "REST APIs"],
+  },
+  {
+    title: "Cloud and Delivery",
+    description: "Deployment workflows and infrastructure choices that support steady execution.",
+    icon: Cloud,
+    skills: ["Google Cloud", "Docker", "GitHub Actions", "CI/CD", "DigitalOcean", "Firebase"],
+  },
+  {
+    title: "Languages",
+    description: "Comfortable moving between application, scripting, and data-oriented environments.",
+    icon: Code2,
+    skills: ["Python", "TypeScript", "JavaScript", "C++", "SQL"],
+  },
+  {
+    title: "Tooling",
+    description: "Daily workflow built around reproducibility, collaboration, and fast iteration.",
+    icon: Wrench,
+    skills: ["Git", "GitHub", "Unix", "Jupyter", "Streamlit", "Phabricator"],
+  },
+];
+
+const stats = [
+  { value: "25+", label: "Technologies used across research and product work" },
+  { value: "6", label: "Core capability areas spanning engineering and ML" },
+  { value: "3", label: "Distinct environments: research, startup, and internship" },
+];
 
 const Skills = () => {
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-
-  const skillCategories = [
-    {
-      title: "Machine Learning & AI",
-      skills: ["Python", "TensorFlow", "PyTorch", "Scikit-learn", "Hugging Face", "Deep Learning", "NLP", "Computer Vision"],
-      icon: Brain,
-      gradient: "from-accent/10 via-accent/5 to-background",
-      borderGradient: "from-accent to-accent/80",
-      description: "Building intelligent systems and neural networks"
-    },
-    {
-      title: "Data & Analytics", 
-      skills: ["BigQuery", "SQL", "PostgreSQL", "Pandas", "NumPy", "SciPy", "Seaborn", "Data Analysis"],
-      icon: BarChart3,
-      gradient: "from-accent/8 via-accent/4 to-background",
-      borderGradient: "from-accent/90 to-accent/70",
-      description: "Extracting insights from complex datasets"
-    },
-    {
-      title: "Web Development",
-      skills: ["JavaScript", "Vue.js", "React", "Laravel", "Flask", "REST APIs", "Web Development"],
-      icon: Globe,
-      gradient: "from-accent/12 via-accent/6 to-background",
-      borderGradient: "from-accent to-accent/60",
-      description: "Creating dynamic and responsive web experiences"
-    },
-    {
-      title: "Cloud & DevOps",
-      skills: ["Google Cloud Platform", "Docker", "GitHub Actions", "CI/CD", "DigitalOcean", "Firebase"],
-      icon: Cloud,
-      gradient: "from-accent/6 via-accent/3 to-background",
-      borderGradient: "from-accent/80 to-accent/90",
-      description: "Scaling applications in the cloud"
-    },
-    {
-      title: "Programming Languages",
-      skills: ["Python", "JavaScript", "C++", "SQL", "TypeScript"],
-      icon: Code2,
-      gradient: "from-accent/14 via-accent/7 to-background",
-      borderGradient: "from-accent/70 to-accent",
-      description: "Fluent in multiple programming paradigms"
-    },
-    {
-      title: "Tools & Platforms",
-      skills: ["GitHub", "Unix", "Streamlit", "Jupyter", "Git", "Phabricator"],
-      icon: Wrench,
-      gradient: "from-accent/9 via-accent/4 to-background",
-      borderGradient: "from-accent/85 to-accent/75",
-      description: "Mastering the developer toolchain"
-    }
-  ];
-
   return (
-    <section className="py-16 px-6 relative" id="skills">
-      {/* Subtle Grid Background */}
-      <div className="absolute inset-0 opacity-[0.02]">
-        <div 
-          className="absolute inset-0" 
-          style={{
-            backgroundImage: 'linear-gradient(hsl(var(--accent)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--accent)) 1px, transparent 1px)',
-            backgroundSize: '80px 80px'
-          }}
-        />
-      </div>
-
-      <div className="max-w-6xl mx-auto relative">
-        {/* Header Section */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-3 mb-6">
-            <div className="h-px w-12 bg-gradient-to-r from-transparent to-accent"></div>
-            <Zap className="h-5 w-5 text-accent" />
-            <h2 className="text-4xl md:text-5xl font-bold">
-              <span className="text-gradient">Technical Skills</span>
-            </h2>
-            <Zap className="h-5 w-5 text-accent" />
-            <div className="h-px w-12 bg-gradient-to-l from-transparent to-accent"></div>
+    <section id="skills" className="section-shell">
+      <div className="section-inner">
+        <div className="max-w-3xl">
+          <div className="section-kicker">
+            <span className="eyebrow-line" />
+            Capabilities
           </div>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Expertise across AI/ML, data science, and full-stack development
+          <h2 className="section-title">Technical breadth with a strong applied core.</h2>
+          <p className="section-copy">
+            My work sits at the intersection of machine learning, analytics, and software
+            engineering. I care about building systems that are technically sound, useful in
+            practice, and maintainable by the teams around them.
           </p>
         </div>
 
-        {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {skillCategories.map((category, index) => {
-            const IconComponent = category.icon;
-            const isHovered = hoveredCard === index;
-            
+            const Icon = category.icon;
+
             return (
-              <Card 
+              <article
                 key={category.title}
-                className={`
-                  group relative overflow-hidden border-0 transition-all duration-300 cursor-pointer
-                  hover:shadow-2xl hover:shadow-accent/10 hover:-translate-y-1
-                  bg-gradient-to-br ${category.gradient} backdrop-blur-sm
-                `}
-                style={{ 
-                  animationDelay: `${index * 0.1}s`,
-                  animationFillMode: 'both'
-                }}
-                onMouseEnter={() => setHoveredCard(index)}
-                onMouseLeave={() => setHoveredCard(null)}
+                className="panel animate-fade-in-up p-6 transition-transform duration-300 hover:-translate-y-1"
+                style={{ animationDelay: `${index * 0.08}s` }}
               >
-                {/* Gradient Border */}
-                <div className={`absolute inset-0 rounded-lg bg-gradient-to-r ${category.borderGradient} opacity-20 group-hover:opacity-40 transition-opacity duration-300`} />
-                <div className="absolute inset-[1px] rounded-lg bg-card" />
-                
-                {/* Content */}
-                <div className="relative p-5">
-                  {/* Header */}
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className={`
-                      flex-shrink-0 w-10 h-10 rounded-lg bg-gradient-to-br ${category.borderGradient} 
-                      flex items-center justify-center transition-transform duration-300
-                      group-hover:scale-105
-                    `}>
-                      <IconComponent className="h-5 w-5 text-white" />
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="font-semibold text-base text-foreground group-hover:text-accent transition-colors duration-300">
-                        {category.title}
-                      </h3>
-                    </div>
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-accent/20 bg-accent/10">
+                    <Icon className="h-5 w-5 text-accent" />
                   </div>
-
-                  {/* Skills Grid */}
-                  <div className="grid grid-cols-2 gap-2 mb-4">
-                    {category.skills.map((skill, skillIndex) => (
-                      <div
-                        key={skill}
-                        className={`
-                          opacity-0 animate-fade-in-up
-                        `}
-                        style={{ 
-                          animationDelay: `${(index * 0.1) + (skillIndex * 0.02)}s`,
-                          animationFillMode: 'forwards'
-                        }}
-                      >
-                        <div className={`
-                          px-2.5 py-1.5 rounded-md bg-secondary/40 border border-border/20
-                          hover:bg-accent/10 hover:border-accent/30 hover:text-accent
-                          transition-all duration-200 text-sm font-medium text-center
-                          group-hover:bg-secondary/50
-                        `}>
-                          {skill}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Technology Count */}
-                  <div className="pt-3 border-t border-border/10">
-                    <div className="flex items-center justify-center text-xs text-muted-foreground">
-                      <span className="flex items-center gap-1">
-                        <TrendingUp className="h-3 w-3" />
-                        {category.skills.length} technologies
-                      </span>
-                    </div>
-                  </div>
+                  <span className="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
                 </div>
 
-                {/* Subtle Hover Glow */}
-                <div className={`
-                  absolute inset-0 rounded-lg bg-gradient-to-r ${category.borderGradient} opacity-0 
-                  group-hover:opacity-5 transition-opacity duration-500 pointer-events-none
-                `} />
-              </Card>
+                <h3 className="mt-6 text-xl font-semibold text-foreground">{category.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-muted-foreground">{category.description}</p>
+
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {category.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-sm text-muted-foreground"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </article>
             );
           })}
         </div>
 
-        {/* Stats Section */}
-        <div className="mt-20">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="text-center p-6 rounded-2xl bg-card/50 border border-border/30 backdrop-blur-sm">
-              <div className="text-3xl font-bold text-accent mb-2">
-                {skillCategories.reduce((total, cat) => total + cat.skills.length, 0)}+
-              </div>
-              <div className="text-sm text-muted-foreground">Technologies</div>
+        <div className="mt-14 grid gap-4 md:grid-cols-3">
+          {stats.map((stat) => (
+            <div key={stat.label} className="panel p-6">
+              <p className="text-3xl font-semibold text-foreground">{stat.value}</p>
+              <p className="mt-3 text-sm leading-7 text-muted-foreground">{stat.label}</p>
             </div>
-            <div className="text-center p-6 rounded-2xl bg-card/50 border border-border/30 backdrop-blur-sm">
-              <div className="text-3xl font-bold text-accent mb-2">
-                {skillCategories.length}
-              </div>
-              <div className="text-sm text-muted-foreground">Specializations</div>
-            </div>
-            <div className="text-center p-6 rounded-2xl bg-card/50 border border-border/30 backdrop-blur-sm">
-              <div className="text-3xl font-bold text-accent mb-2">5+</div>
-              <div className="text-sm text-muted-foreground">Years Experience</div>
-            </div>
-            <div className="text-center p-6 rounded-2xl bg-card/50 border border-border/30 backdrop-blur-sm">
-              <div className="text-3xl font-bold text-accent mb-2">10+</div>
-              <div className="text-sm text-muted-foreground">Projects Completed</div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

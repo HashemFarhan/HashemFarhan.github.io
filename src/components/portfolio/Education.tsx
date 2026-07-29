@@ -1,138 +1,126 @@
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Award, BookOpen, Calendar, GraduationCap, MapPin, Trophy } from "lucide-react";
+import { Award, BookOpen, Calendar, GraduationCap, MapPin, Users } from "lucide-react";
+
+const achievements = [
+  "MIT Beaver Works quantum computing workshop nominee",
+  "Semi-finalist in the IYMC International Math Competition",
+  "Second place in the FLL Robotics Competition",
+];
+
+const leadership = [
+  {
+    role: "Academic Tutor",
+    organization: "Luddy School of Informatics, Computing, and Engineering",
+    period: "Sep 2024 - Present",
+    description:
+      "Support computer science students through tutoring, explanation, and structured problem solving.",
+  },
+  {
+    role: "Public Relations Manager",
+    organization: "Google Developer Student Club",
+    period: "Sep 2023 - Jul 2024",
+    description:
+      "Led outreach and communication efforts to strengthen student engagement in the campus developer community.",
+  },
+];
 
 const Education = () => {
-  const achievements = [
-    {
-      title: "MIT Beaver Works — Quantum Computing Workshop Nominee",
-      type: "Workshop",
-      icon: <Award className="h-5 w-5" />
-    },
-    {
-      title: "Semi-Finalist — IYMC International Math Competition", 
-      type: "Competition",
-      icon: <Trophy className="h-5 w-5" />
-    },
-    {
-      title: "2nd Place — FLL Robotics Competition",
-      type: "Competition", 
-      icon: <Trophy className="h-5 w-5" />
-    }
-  ];
-
-  const leadership = [
-    {
-      role: "Academic Tutor",
-      organization: "Luddy School of Informatics, Computing, and Engineering",
-      period: "Sep 2024 – Present",
-      description: "Providing academic support and mentorship to fellow computer science students"
-    },
-    {
-      role: "Public Relations Manager", 
-      organization: "Google Developer Student Club (GDSC)",
-      period: "Sep 2023 – Jul 2024",
-      description: "Led marketing initiatives and community engagement for the campus developer community"
-    }
-  ];
-
   return (
-    <section className="py-20 px-6 bg-secondary/20" id="education">
-      <div className="max-w-4xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-gradient">Education & Leadership</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Academic excellence combined with active community leadership and recognition
+    <section id="education" className="section-shell">
+      <div className="section-inner">
+        <div className="max-w-3xl">
+          <div className="section-kicker">
+            <span className="eyebrow-line" />
+            Education
+          </div>
+          <h2 className="section-title">Academic grounding, recognized performance, and leadership.</h2>
+          <p className="section-copy">
+            My academic work at Indiana University is complemented by competitive recognition and
+            campus leadership, all of which reinforce a disciplined and collaborative way of
+            working.
           </p>
         </div>
 
-        {/* Education */}
-        <Card className="card-gradient border-border/50 hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:shadow-accent/10 mb-8">
-          <CardHeader>
+        <div className="mt-14 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+          <article className="panel p-8">
             <div className="flex items-start gap-4">
-              <div className="p-3 rounded-lg bg-accent/10 border border-accent/20">
-                <GraduationCap className="h-6 w-6 text-accent" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-accent/20 bg-accent/10">
+                <GraduationCap className="h-5 w-5 text-accent" />
               </div>
-              <div className="flex-1">
-                <CardTitle className="text-2xl mb-2">Bachelor of Science in Computer Science</CardTitle>
-                <div className="flex items-center gap-2 text-muted-foreground mb-2">
-                  <BookOpen className="h-4 w-4" />
-                  <span className="font-medium">Indiana University Bloomington</span>
-                </div>
-                <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 text-sm text-muted-foreground">
-                  <div className="flex items-center gap-1">
-                    <Calendar className="h-3 w-3" />
-                    <span>Expected May 2026</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <MapPin className="h-3 w-3" />
-                    <span>Bloomington, IN</span>
-                  </div>
-                </div>
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-accent/80">
+                  Degree
+                </p>
+                <h3 className="mt-2 text-2xl font-semibold text-foreground">
+                  Bachelor of Science in Computer Science
+                </h3>
+                <p className="mt-3 inline-flex items-center gap-2 text-sm text-muted-foreground">
+                  <BookOpen className="h-4 w-4 text-accent" />
+                  Indiana University Bloomington
+                </p>
               </div>
             </div>
-          </CardHeader>
-        </Card>
 
-        {/* Achievements */}
-        <div className="mb-8">
-          <h3 className="text-2xl font-bold mb-6 text-center">
-            <span className="text-gradient">Achievements</span>
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {achievements.map((achievement, index) => (
-              <Card 
-                key={index}
-                className="card-gradient border-border/50 hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:shadow-accent/10 group text-center"
-              >
-                <CardContent className="pt-6">
-                  <div className="flex justify-center mb-4">
-                    <div className="p-3 rounded-lg bg-accent/10 border border-accent/20 group-hover:bg-accent/20 transition-colors">
-                      {achievement.icon}
-                    </div>
-                  </div>
-                  <h4 className="font-semibold mb-2 group-hover:text-accent transition-colors">
-                    {achievement.title}
-                  </h4>
-                  <Badge variant="secondary" className="text-xs">
-                    {achievement.type}
-                  </Badge>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              <div className="rounded-2xl border border-white/8 bg-white/[0.03] p-4">
+                <p className="inline-flex items-center gap-2 text-sm font-medium text-foreground">
+                  <Calendar className="h-4 w-4 text-accent" />
+                  Expected graduation
+                </p>
+                <p className="mt-2 text-sm text-muted-foreground">May 2026</p>
+              </div>
+              <div className="rounded-2xl border border-white/8 bg-white/[0.03] p-4">
+                <p className="inline-flex items-center gap-2 text-sm font-medium text-foreground">
+                  <MapPin className="h-4 w-4 text-accent" />
+                  Campus location
+                </p>
+                <p className="mt-2 text-sm text-muted-foreground">Bloomington, Indiana</p>
+              </div>
+            </div>
+          </article>
+
+          <article className="panel p-8">
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-accent/20 bg-accent/10">
+                <Award className="h-4 w-4 text-accent" />
+              </div>
+              <h3 className="text-xl font-semibold text-foreground">Selected achievements</h3>
+            </div>
+
+            <div className="mt-6 space-y-3">
+              {achievements.map((achievement) => (
+                <div
+                  key={achievement}
+                  className="rounded-2xl border border-white/8 bg-white/[0.03] px-4 py-4"
+                >
+                  <p className="text-sm leading-7 text-muted-foreground">{achievement}</p>
+                </div>
+              ))}
+            </div>
+          </article>
         </div>
 
-        {/* Leadership */}
-        <div>
-          <h3 className="text-2xl font-bold mb-6 text-center">
-            <span className="text-gradient">Leadership Experience</span>
-          </h3>
-          <div className="space-y-4">
-            {leadership.map((exp, index) => (
-              <Card 
-                key={index}
-                className="card-gradient border-border/50 hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:shadow-accent/10 group"
-              >
-                <CardContent className="pt-6">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-3">
-                    <div>
-                      <h4 className="font-semibold text-lg group-hover:text-accent transition-colors">
-                        {exp.role}
-                      </h4>
-                      <p className="text-muted-foreground font-medium">{exp.organization}</p>
-                    </div>
-                    <Badge variant="outline" className="border-accent/30 text-accent self-start sm:self-center">
-                      {exp.period}
-                    </Badge>
+        <div className="mt-6 panel p-8">
+          <div className="flex items-center gap-3">
+            <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-accent/20 bg-accent/10">
+              <Users className="h-4 w-4 text-accent" />
+            </div>
+            <h3 className="text-xl font-semibold text-foreground">Leadership and service</h3>
+          </div>
+
+          <div className="mt-6 grid gap-4 md:grid-cols-2">
+            {leadership.map((item) => (
+              <div key={item.role} className="rounded-3xl border border-white/8 bg-white/[0.03] p-5">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+                  <div>
+                    <h4 className="text-lg font-semibold text-foreground">{item.role}</h4>
+                    <p className="mt-1 text-sm text-muted-foreground">{item.organization}</p>
                   </div>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {exp.description}
-                  </p>
-                </CardContent>
-              </Card>
+                  <span className="rounded-full border border-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+                    {item.period}
+                  </span>
+                </div>
+                <p className="mt-4 text-sm leading-7 text-muted-foreground">{item.description}</p>
+              </div>
             ))}
           </div>
         </div>
