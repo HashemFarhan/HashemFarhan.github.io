@@ -42,18 +42,18 @@ const Navigation = () => {
 
   return (
     <nav className="fixed inset-x-0 top-0 z-50 px-4 pt-4">
-      <div className="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-white/10 bg-background/72 px-4 py-3 shadow-[0_16px_40px_-28px_rgba(0,0,0,0.85)] backdrop-blur-xl md:px-6">
+      <div className="mx-auto flex max-w-6xl items-center justify-between rounded-lg border border-white/10 bg-background/80 px-4 py-3 shadow-[0_16px_40px_-28px_rgba(0,0,0,0.85)] backdrop-blur-xl md:px-5">
         <button
           type="button"
           onClick={() => scrollToSection("#hero")}
           className="flex items-center gap-3 text-left"
         >
-          <span className="flex h-10 w-10 items-center justify-center rounded-full border border-accent/30 bg-accent/10 text-sm font-bold text-accent">
+          <span className="flex h-9 w-9 items-center justify-center rounded-md border border-accent/30 bg-accent/10 text-sm font-bold text-accent">
             HF
           </span>
           <span className="hidden sm:block">
             <span className="block text-sm font-semibold text-foreground">Hashem Farhan</span>
-            <span className="block text-xs uppercase tracking-[0.22em] text-muted-foreground">
+            <span className="block text-xs uppercase text-muted-foreground">
               Machine Learning Engineer
             </span>
           </span>
@@ -68,9 +68,9 @@ const Navigation = () => {
                 key={item.label}
                 type="button"
                 onClick={() => scrollToSection(item.href)}
-                className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                className={`rounded-md px-3 py-2 text-sm font-medium transition-colors ${
                   isActive
-                    ? "bg-white/8 text-foreground"
+                    ? "bg-white/10 text-foreground"
                     : "text-muted-foreground hover:text-foreground"
                 }`}
               >
@@ -80,7 +80,7 @@ const Navigation = () => {
           })}
           <a
             href="mailto:1hashemfarhan@gmail.com"
-            className="ml-3 rounded-full bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground transition-transform hover:-translate-y-0.5"
+            className="ml-3 rounded-md bg-foreground px-4 py-2 text-sm font-semibold text-background transition hover:bg-foreground/90"
           >
             Get in touch
           </a>
@@ -88,7 +88,7 @@ const Navigation = () => {
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-foreground md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/10 text-foreground md:hidden"
           onClick={() => setIsOpen((current) => !current)}
           aria-label="Toggle navigation"
         >
@@ -97,7 +97,7 @@ const Navigation = () => {
       </div>
 
       {isOpen && (
-        <div className="mx-auto mt-3 max-w-6xl rounded-[1.5rem] border border-white/10 bg-background/94 p-4 shadow-[0_24px_50px_-28px_rgba(0,0,0,0.9)] backdrop-blur-xl md:hidden">
+        <div className="mx-auto mt-3 max-w-6xl rounded-lg border border-white/10 bg-background/94 p-4 shadow-[0_24px_50px_-28px_rgba(0,0,0,0.9)] backdrop-blur-xl md:hidden">
           <div className="flex flex-col gap-2">
             {navItems.map((item) => {
               const isActive = activeSection === item.href.slice(1);
@@ -107,9 +107,9 @@ const Navigation = () => {
                   key={item.label}
                   type="button"
                   onClick={() => scrollToSection(item.href)}
-                  className={`rounded-2xl px-4 py-3 text-left text-sm font-medium transition-colors ${
+                  className={`rounded-md px-4 py-3 text-left text-sm font-medium transition-colors ${
                     isActive
-                      ? "bg-white/8 text-foreground"
+                      ? "bg-white/10 text-foreground"
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
@@ -119,7 +119,7 @@ const Navigation = () => {
             })}
             <a
               href="mailto:1hashemfarhan@gmail.com"
-              className="mt-2 rounded-2xl bg-accent px-4 py-3 text-center text-sm font-semibold text-accent-foreground"
+              className="mt-2 rounded-md bg-foreground px-4 py-3 text-center text-sm font-semibold text-background"
             >
               Get in touch
             </a>

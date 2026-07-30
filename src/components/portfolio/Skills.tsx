@@ -3,46 +3,46 @@ import { BarChart3, Brain, Cloud, Code2, Globe, Wrench } from "lucide-react";
 const skillCategories = [
   {
     title: "Machine Learning and AI",
-    description: "Model development, evaluation, and deployment for real-world use cases.",
+    description: "Training and testing models for text, vision, and prediction tasks.",
     icon: Brain,
     skills: ["Python", "PyTorch", "TensorFlow", "Scikit-learn", "Hugging Face", "NLP", "Computer Vision"],
   },
   {
     title: "Data and Analytics",
-    description: "Structured analysis pipelines with a focus on clarity, signal, and decision support.",
+    description: "Cleaning data, writing queries, and turning results into useful summaries.",
     icon: BarChart3,
     skills: ["SQL", "BigQuery", "PostgreSQL", "Pandas", "NumPy", "SciPy", "Seaborn"],
   },
   {
     title: "Web Engineering",
-    description: "Product-facing applications that balance performance, reliability, and clean UX.",
+    description: "Building interfaces, APIs, and web features people can actually use.",
     icon: Globe,
     skills: ["React", "Vue.js", "TypeScript", "JavaScript", "Laravel", "Flask", "REST APIs"],
   },
   {
     title: "Cloud and Delivery",
-    description: "Deployment workflows and infrastructure choices that support steady execution.",
+    description: "Shipping projects with repeatable builds, deployments, and cloud tools.",
     icon: Cloud,
     skills: ["Google Cloud", "Docker", "GitHub Actions", "CI/CD", "DigitalOcean", "Firebase"],
   },
   {
     title: "Languages",
-    description: "Comfortable moving between application, scripting, and data-oriented environments.",
+    description: "Writing code across web apps, data scripts, and backend services.",
     icon: Code2,
     skills: ["Python", "TypeScript", "JavaScript", "C++", "SQL"],
   },
   {
     title: "Tooling",
-    description: "Daily workflow built around reproducibility, collaboration, and fast iteration.",
+    description: "Using the tools that keep projects organized and easy to share.",
     icon: Wrench,
     skills: ["Git", "GitHub", "Unix", "Jupyter", "Streamlit", "Phabricator"],
   },
 ];
 
 const stats = [
-  { value: "25+", label: "Technologies used across research and product work" },
-  { value: "6", label: "Core capability areas spanning engineering and ML" },
-  { value: "3", label: "Distinct environments: research, startup, and internship" },
+  { value: "25+", label: "Technologies used in real projects" },
+  { value: "6", label: "Main skill areas" },
+  { value: "3", label: "Research, startup, and internship settings" },
 ];
 
 const Skills = () => {
@@ -54,11 +54,10 @@ const Skills = () => {
             <span className="eyebrow-line" />
             Capabilities
           </div>
-          <h2 className="section-title">Technical breadth with a strong applied core.</h2>
+          <h2 className="section-title">Skills I use most.</h2>
           <p className="section-copy">
-            My work sits at the intersection of machine learning, analytics, and software
-            engineering. I care about building systems that are technically sound, useful in
-            practice, and maintainable by the teams around them.
+            A focused view of the tools I use for machine learning, data work, web development,
+            and deployment.
           </p>
         </div>
 
@@ -69,14 +68,14 @@ const Skills = () => {
             return (
               <article
                 key={category.title}
-                className="panel animate-fade-in-up p-6 transition-transform duration-300 hover:-translate-y-1"
+                className="panel animate-rise p-5 transition-transform duration-300 hover:-translate-y-0.5"
                 style={{ animationDelay: `${index * 0.08}s` }}
               >
                 <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-accent/20 bg-accent/10">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-md border border-accent/20 bg-accent/10">
                     <Icon className="h-5 w-5 text-accent" />
                   </div>
-                  <span className="font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground">
+                  <span className="font-mono text-xs uppercase text-muted-foreground">
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
@@ -88,7 +87,7 @@ const Skills = () => {
                   {category.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-sm text-muted-foreground"
+                      className="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1.5 text-sm text-muted-foreground"
                     >
                       {skill}
                     </span>

@@ -32,22 +32,21 @@ const Education = () => {
             <span className="eyebrow-line" />
             Education
           </div>
-          <h2 className="section-title">Academic grounding, recognized performance, and leadership.</h2>
+          <h2 className="section-title">Education and campus work.</h2>
           <p className="section-copy">
-            My academic work at Indiana University is complemented by competitive recognition and
-            campus leadership, all of which reinforce a disciplined and collaborative way of
-            working.
+            Computer science coursework, tutoring, student leadership, and a few selected
+            recognitions.
           </p>
         </div>
 
         <div className="mt-14 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <article className="panel p-8">
             <div className="flex items-start gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-accent/20 bg-accent/10">
+              <div className="flex h-10 w-10 items-center justify-center rounded-md border border-accent/20 bg-accent/10">
                 <GraduationCap className="h-5 w-5 text-accent" />
               </div>
               <div>
-                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-accent/80">
+                <p className="text-sm font-semibold uppercase text-accent/80">
                   Degree
                 </p>
                 <h3 className="mt-2 text-2xl font-semibold text-foreground">
@@ -61,14 +60,14 @@ const Education = () => {
             </div>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-2xl border border-white/8 bg-white/[0.03] p-4">
+              <div className="rounded-md border border-white/10 bg-white/[0.03] p-4">
                 <p className="inline-flex items-center gap-2 text-sm font-medium text-foreground">
                   <Calendar className="h-4 w-4 text-accent" />
                   Expected graduation
                 </p>
                 <p className="mt-2 text-sm text-muted-foreground">May 2026</p>
               </div>
-              <div className="rounded-2xl border border-white/8 bg-white/[0.03] p-4">
+              <div className="rounded-md border border-white/10 bg-white/[0.03] p-4">
                 <p className="inline-flex items-center gap-2 text-sm font-medium text-foreground">
                   <MapPin className="h-4 w-4 text-accent" />
                   Campus location
@@ -80,7 +79,7 @@ const Education = () => {
 
           <article className="panel p-8">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-accent/20 bg-accent/10">
+              <div className="flex h-10 w-10 items-center justify-center rounded-md border border-accent/20 bg-accent/10">
                 <Award className="h-4 w-4 text-accent" />
               </div>
               <h3 className="text-xl font-semibold text-foreground">Selected achievements</h3>
@@ -90,7 +89,7 @@ const Education = () => {
               {achievements.map((achievement) => (
                 <div
                   key={achievement}
-                  className="rounded-2xl border border-white/8 bg-white/[0.03] px-4 py-4"
+                  className="rounded-md border border-white/10 bg-white/[0.03] px-4 py-4"
                 >
                   <p className="text-sm leading-7 text-muted-foreground">{achievement}</p>
                 </div>
@@ -101,7 +100,7 @@ const Education = () => {
 
         <div className="mt-6 panel p-8">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-accent/20 bg-accent/10">
+            <div className="flex h-10 w-10 items-center justify-center rounded-md border border-accent/20 bg-accent/10">
               <Users className="h-4 w-4 text-accent" />
             </div>
             <h3 className="text-xl font-semibold text-foreground">Leadership and service</h3>
@@ -109,13 +108,13 @@ const Education = () => {
 
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             {leadership.map((item) => (
-              <div key={item.role} className="rounded-3xl border border-white/8 bg-white/[0.03] p-5">
+              <div key={item.role} className="rounded-md border border-white/10 bg-white/[0.03] p-5">
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                   <div>
                     <h4 className="text-lg font-semibold text-foreground">{item.role}</h4>
                     <p className="mt-1 text-sm text-muted-foreground">{item.organization}</p>
                   </div>
-                  <span className="rounded-full border border-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+                  <span className="rounded-md border border-white/10 px-3 py-1 text-xs font-semibold uppercase text-accent">
                     {item.period}
                   </span>
                 </div>

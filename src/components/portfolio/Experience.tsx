@@ -1,20 +1,21 @@
-import { ArrowUpRight, Brain, Briefcase, Building2, Calendar, Code2, MapPin } from "lucide-react";
+import { Brain, Briefcase, Calendar, Code2, MapPin, Sparkles } from "lucide-react";
 
 const experiences = [
   {
     title: "Researcher",
-    company: "Multi-institutional Research Collaboration with MIT and the Dalle Molle Institute",
+    company: "Research collaboration with MIT and the Dalle Molle Institute",
     location: "Remote",
     period: "Aug 2024 - Present",
     icon: Brain,
+    recruiterNote: "Research + healthcare data",
     summary:
-      "Contributing to healthcare-focused research by building statistical and machine learning workflows across large clinical datasets.",
+      "Working with a research team on healthcare data analysis and predictive modeling.",
     achievements: [
-      "Processed more than 100,000 clinical records using Python-based analytical workflows.",
-      "Developed predictive models and statistical analyses to support research findings.",
-      "Collaborated with distributed researchers across institutions on publication-oriented work.",
+      "Processed 100,000+ clinical records for analysis.",
+      "Built predictive models and statistical reports in Python.",
+      "Contributed to a research paper prepared for peer review.",
     ],
-    stack: ["Python", "Pandas", "SciPy", "BigQuery", "Machine Learning", "Healthcare Data"],
+    stack: ["Python", "Pandas", "SciPy", "BigQuery", "Machine Learning"],
   },
   {
     title: "Lead Software Engineer",
@@ -22,14 +23,15 @@ const experiences = [
     location: "Remote",
     period: "Apr 2025 - Present",
     icon: Code2,
+    recruiterNote: "Leadership + production web app",
     summary:
-      "Leading product engineering across backend services, frontend delivery, and deployment workflows for a consumer platform.",
+      "Leading frontend and backend work for a product with payments, sharing, and deployment needs.",
     achievements: [
-      "Built REST APIs for gift contribution and social sharing flows.",
-      "Improved distribution performance with Open Graph and share optimization.",
-      "Directed frontend implementation in Vue.js and coordinated CI/CD deployment workflows.",
+      "Built REST APIs for gift contribution flows.",
+      "Improved social sharing with Open Graph metadata.",
+      "Led Vue.js frontend work and set up GitHub Actions deployments.",
     ],
-    stack: ["Laravel", "Vue.js", "REST APIs", "GitHub Actions", "DigitalOcean", "Tailwind CSS"],
+    stack: ["Laravel", "Vue.js", "REST APIs", "GitHub Actions", "DigitalOcean"],
   },
   {
     title: "Machine Learning Engineer Intern",
@@ -37,14 +39,15 @@ const experiences = [
     location: "Remote",
     period: "May 2025 - Aug 2025",
     icon: Brain,
+    recruiterNote: "NLP + model improvement",
     summary:
-      "Worked on multilingual NLP systems and model pipelines designed to improve classification quality and support operations.",
+      "Worked on multilingual text models for support and moderation workflows.",
     achievements: [
-      "Fine-tuned transformer and sequence models including XLM-Roberta and Longformer.",
-      "Built ensemble workflows using multi-modal training inputs.",
-      "Improved model performance over baseline systems while supporting large-scale text processing.",
+      "Fine-tuned XLM-Roberta, Longformer, and LSTM models.",
+      "Built ensemble models using multiple data sources.",
+      "Improved model performance by 15% over the baseline.",
     ],
-    stack: ["PyTorch", "Hugging Face", "NLP", "OpenAI APIs", "Classification", "Ensemble Models"],
+    stack: ["PyTorch", "Hugging Face", "NLP", "OpenAI APIs", "Classification"],
   },
   {
     title: "Machine Learning Engineer Intern",
@@ -52,14 +55,15 @@ const experiences = [
     location: "Remote",
     period: "Jun 2024 - Sep 2024",
     icon: Briefcase,
+    recruiterNote: "LLMs + cloud deployment",
     summary:
-      "Designed language-model-powered interfaces for business data access, with a strong focus on retrieval and deployment.",
+      "Built tools that let teams ask natural-language questions about business data.",
     achievements: [
-      "Designed RAG pipelines for natural-language querying over internal business data.",
-      "Fine-tuned open-source language models with Hugging Face tooling.",
-      "Deployed applications and supporting models on Google Cloud and RunPod infrastructure.",
+      "Designed RAG pipelines for business data search.",
+      "Fine-tuned open-source language models.",
+      "Deployed models and demos on Google Cloud and RunPod.",
     ],
-    stack: ["RAG", "LLM Fine-tuning", "Google Cloud", "RunPod", "Streamlit", "Hugging Face"],
+    stack: ["RAG", "LLM Fine-tuning", "Google Cloud", "RunPod", "Streamlit"],
   },
 ];
 
@@ -67,98 +71,84 @@ const Experience = () => {
   return (
     <section id="experience" className="section-shell">
       <div className="section-inner">
-        <div className="max-w-3xl">
-          <div className="section-kicker">
-            <span className="eyebrow-line" />
-            Experience
+        <div className="section-heading">
+          <div>
+            <p className="section-kicker">Experience</p>
+            <h2 className="section-title">Relevant work, clearly shown.</h2>
           </div>
-          <h2 className="section-title">Work that connects research depth with product execution.</h2>
           <p className="section-copy">
-            I have worked across research collaborations, product teams, and applied machine
-            learning internships. The common thread is translating technical complexity into
-            usable systems and measurable progress.
+            A mix of research, ML internships, and web development. The highlighted labels
+            call out what matters most for recruiters.
           </p>
         </div>
 
-        <div className="mt-14 space-y-6">
+        <div className="mt-10 space-y-4">
           {experiences.map((experience, index) => {
             const Icon = experience.icon;
 
             return (
               <article
                 key={`${experience.company}-${experience.title}`}
-                className="panel animate-fade-in-up p-6 md:p-8"
-                style={{ animationDelay: `${index * 0.08}s` }}
+                className="panel animate-rise group p-5 md:p-6"
+                style={{ animationDelay: `${index * 0.06}s` }}
               >
-                <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
-                  <div className="max-w-3xl">
-                    <div className="flex items-start gap-4">
-                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border border-accent/20 bg-accent/10">
-                        <Icon className="h-5 w-5 text-accent" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-semibold uppercase tracking-[0.22em] text-accent/80">
-                          {experience.title}
-                        </p>
-                        <h3 className="mt-2 text-2xl font-semibold text-foreground">
-                          {experience.company}
-                        </h3>
-                        <div className="mt-4 flex flex-col gap-2 text-sm text-muted-foreground sm:flex-row sm:gap-5">
-                          <span className="inline-flex items-center gap-2">
-                            <Calendar className="h-4 w-4 text-accent" />
-                            {experience.period}
-                          </span>
-                          <span className="inline-flex items-center gap-2">
-                            <MapPin className="h-4 w-4 text-accent" />
-                            {experience.location}
-                          </span>
+                <div className="grid gap-6 lg:grid-cols-[1fr_280px]">
+                  <div>
+                    <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                      <div className="flex gap-4">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-white/10 bg-white/[0.04] transition group-hover:border-accent/40">
+                          <Icon className="h-5 w-5 text-accent" />
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-semibold text-foreground">{experience.title}</h3>
+                          <p className="mt-1 text-base text-foreground/80">{experience.company}</p>
+                          <div className="mt-3 flex flex-wrap gap-3 text-sm text-muted-foreground">
+                            <span className="inline-flex items-center gap-2">
+                              <Calendar className="h-4 w-4 text-muted-foreground" />
+                              {experience.period}
+                            </span>
+                            <span className="inline-flex items-center gap-2">
+                              <MapPin className="h-4 w-4 text-muted-foreground" />
+                              {experience.location}
+                            </span>
+                          </div>
                         </div>
                       </div>
+                      <span className="inline-flex w-fit items-center gap-2 rounded-md border border-emerald-400/20 bg-emerald-400/10 px-3 py-2 text-sm font-medium text-emerald-200">
+                        <Sparkles className="h-4 w-4" />
+                        {experience.recruiterNote}
+                      </span>
                     </div>
 
-                    <p className="mt-6 max-w-2xl text-base leading-8 text-muted-foreground">
+                    <p className="mt-5 max-w-2xl text-sm leading-7 text-muted-foreground">
                       {experience.summary}
                     </p>
 
-                    <div className="mt-6 grid gap-3">
+                    <div className="mt-5 grid gap-2 md:grid-cols-3">
                       {experience.achievements.map((achievement) => (
                         <div
                           key={achievement}
-                          className="rounded-2xl border border-white/8 bg-white/[0.03] px-4 py-4"
+                          className="rounded-md border border-white/10 bg-white/[0.025] p-3 text-sm leading-6 text-muted-foreground"
                         >
-                          <p className="text-sm leading-7 text-muted-foreground">{achievement}</p>
+                          {achievement}
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  <div className="lg:w-[280px]">
-                    <div className="rounded-3xl border border-white/8 bg-white/[0.03] p-5">
-                      <div className="flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.22em] text-accent/80">
-                        <Building2 className="h-4 w-4" />
-                        Stack
-                      </div>
-                      <div className="mt-4 flex flex-wrap gap-2">
-                        {experience.stack.map((item) => (
-                          <span
-                            key={item}
-                            className="rounded-full border border-white/10 px-3 py-1.5 text-sm text-muted-foreground"
-                          >
-                            {item}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="mt-4 rounded-3xl border border-white/8 bg-accent/8 p-5">
-                      <div className="inline-flex items-center gap-2 text-sm font-semibold text-foreground">
-                        <ArrowUpRight className="h-4 w-4 text-accent" />
-                        Focus
-                      </div>
-                      <p className="mt-3 text-sm leading-7 text-muted-foreground">
-                        Each role strengthened a blend of analytical rigor, product judgment, and
-                        implementation discipline.
-                      </p>
+                  <div className="rounded-md border border-white/10 bg-black/20 p-4">
+                    <p className="text-xs font-semibold uppercase text-muted-foreground">
+                      Tools used
+                    </p>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {experience.stack.map((item) => (
+                        <span
+                          key={item}
+                          className="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1.5 text-xs text-muted-foreground"
+                        >
+                          {item}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 </div>
