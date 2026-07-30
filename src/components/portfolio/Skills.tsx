@@ -5,7 +5,7 @@ const skillCategories = [
     title: "Machine Learning and AI",
     description: "Training and testing models for text, vision, and prediction tasks.",
     icon: Brain,
-    skills: ["Python", "PyTorch", "TensorFlow", "Scikit-learn", "Hugging Face", "NLP", "Computer Vision"],
+    skills: ["Python", "PyTorch", "TensorFlow", "Hugging Face", "LangChain", "LangGraph", "RAG", "LLMs"],
   },
   {
     title: "Data and Analytics",
@@ -17,32 +17,32 @@ const skillCategories = [
     title: "Web Engineering",
     description: "Building interfaces, APIs, and web features people can actually use.",
     icon: Globe,
-    skills: ["React", "Vue.js", "TypeScript", "JavaScript", "Laravel", "Flask", "REST APIs"],
+    skills: ["Next.js", "React", "React Native", "Vue.js", "TypeScript", "JavaScript", "HTML/CSS"],
   },
   {
-    title: "Cloud and Delivery",
-    description: "Shipping projects with repeatable builds, deployments, and cloud tools.",
+    title: "Backend and APIs",
+    description: "Writing the services, data models, and API layers behind applications.",
     icon: Cloud,
-    skills: ["Google Cloud", "Docker", "GitHub Actions", "CI/CD", "DigitalOcean", "Firebase"],
+    skills: ["FastAPI", "Flask", "REST APIs", "Authentication", "PostgreSQL", "Supabase", "Microservices"],
   },
   {
     title: "Languages",
     description: "Writing code across web apps, data scripts, and backend services.",
     icon: Code2,
-    skills: ["Python", "TypeScript", "JavaScript", "C++", "SQL"],
+    skills: ["Python", "TypeScript", "JavaScript", "Bash", "C++", "Kotlin", "SQL"],
   },
   {
-    title: "Tooling",
-    description: "Using the tools that keep projects organized and easy to share.",
+    title: "Cloud and Tooling",
+    description: "Using the tools that keep projects organized, tested, and deployed.",
     icon: Wrench,
-    skills: ["Git", "GitHub", "Unix", "Jupyter", "Streamlit", "Phabricator"],
+    skills: ["AWS", "GCP", "Docker", "Kubernetes", "GitHub Actions", "GitLab CI/CD", "Pytest", "Linux"],
   },
 ];
 
 const stats = [
-  { value: "25+", label: "Technologies used in real projects" },
+  { value: "40+", label: "Beta users on a shipped AI product" },
   { value: "6", label: "Main skill areas" },
-  { value: "3", label: "Research, startup, and internship settings" },
+  { value: "100+", label: "AI-generated notes from Kortas beta users" },
 ];
 
 const Skills = () => {

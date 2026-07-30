@@ -74,6 +74,10 @@ const Education = () => {
                 </p>
                 <p className="mt-2 text-sm text-muted-foreground">Bloomington, Indiana</p>
               </div>
+              <div className="rounded-md border border-white/10 bg-white/[0.03] p-4 sm:col-span-2">
+                <p className="text-sm font-medium text-foreground">GPA</p>
+                <p className="mt-2 text-sm text-muted-foreground">3.66</p>
+              </div>
             </div>
           </article>
 

@@ -2,9 +2,9 @@ import { ArrowRight, Github, Linkedin, Mail, MapPin } from "lucide-react";
 
 const quickFacts = [
   "CS at Indiana University",
-  "ML engineering internships",
-  "Research with large clinical datasets",
-  "Full-stack product work",
+  "Shipped AI note platform",
+  "ML and AI systems experience",
+  "Full-stack web and mobile work",
 ];
 
 const Hero = () => {
@@ -33,9 +33,9 @@ const Hero = () => {
           </p>
 
           <p className="mt-6 max-w-2xl text-base leading-8 text-muted-foreground">
-            I work across model training, data analysis, backend APIs, and frontend product
-            development. I like clear systems, useful results, and teams that care about doing
-            the work well.
+            I work across model training, backend APIs, frontend development, and deployment.
+            Recent work includes an AI note platform, AI lead-generation features, and ML
+            pipelines for moderation.
           </p>
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">

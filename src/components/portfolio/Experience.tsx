@@ -2,6 +2,54 @@ import { Brain, Briefcase, Calendar, Code2, MapPin, Sparkles } from "lucide-reac
 
 const experiences = [
   {
+    title: "Software Engineer, AI Systems",
+    company: "Factua",
+    location: "Remote",
+    period: "Jan 2026 - Present",
+    icon: Brain,
+    recruiterNote: "35% more M&A leads",
+    summary:
+      "Building AI features and backend services for lead generation workflows.",
+    achievements: [
+      "Shipped AI features with Python, FastAPI, and LangGraph.",
+      "Connected scraping, retrieval, and LLM reasoning into APIs.",
+      "Built reusable Python modules and deployment scripts.",
+    ],
+    stack: ["Python", "FastAPI", "LangGraph", "LLMs", "Bash", "CI/CD"],
+  },
+  {
+    title: "Independent Full-Stack Software Engineer",
+    company: "Kortas AI Note Generation Platform",
+    location: "Remote",
+    period: "Nov 2025 - May 2026",
+    icon: Code2,
+    recruiterNote: "40+ beta users",
+    summary:
+      "Built an AI note generation platform from the first architecture decisions through production launch.",
+    achievements: [
+      "Built the app with Next.js, FastAPI, PostgreSQL, Python, and TypeScript.",
+      "Designed document ingestion, chunking, retrieval, and note generation flows.",
+      "Supported 40+ beta users and generated 100+ notes.",
+    ],
+    stack: ["Next.js", "FastAPI", "PostgreSQL", "Python", "TypeScript", "DigitalOcean"],
+  },
+  {
+    title: "Software Engineer",
+    company: "Soloist",
+    location: "Remote",
+    period: "Nov 2025 - Apr 2026",
+    icon: Briefcase,
+    recruiterNote: "$150K funding support",
+    summary:
+      "Built mobile and backend features for a music application with real-time audio features.",
+    achievements: [
+      "Built React Native audio playback, recording, and effects features.",
+      "Created FastAPI services, REST APIs, and PostgreSQL data models.",
+      "Owned features end-to-end while the team secured $150K in funding.",
+    ],
+    stack: ["React Native", "FastAPI", "PostgreSQL", "REST APIs", "Audio"],
+  },
+  {
     title: "Researcher",
     company: "Research collaboration with MIT and the Dalle Molle Institute",
     location: "Remote",
@@ -21,17 +69,17 @@ const experiences = [
     title: "Lead Software Engineer",
     company: "Chipedin",
     location: "Remote",
-    period: "Apr 2025 - Present",
+    period: "Apr 2025 - Dec 2025",
     icon: Code2,
     recruiterNote: "Leadership + production web app",
     summary:
-      "Leading frontend and backend work for a product with payments, sharing, and deployment needs.",
+      "Led development for a funding platform for content creators.",
     achievements: [
-      "Built REST APIs for gift contribution flows.",
-      "Improved social sharing with Open Graph metadata.",
-      "Led Vue.js frontend work and set up GitHub Actions deployments.",
+      "Designed Python backend services and REST APIs.",
+      "Built PostgreSQL schemas for core platform features.",
+      "Mentored a junior developer through code reviews and system design discussions.",
     ],
-    stack: ["Laravel", "Vue.js", "REST APIs", "GitHub Actions", "DigitalOcean"],
+    stack: ["Python", "PostgreSQL", "REST APIs", "Vue.js", "GitHub Actions"],
   },
   {
     title: "Machine Learning Engineer Intern",
@@ -41,13 +89,13 @@ const experiences = [
     icon: Brain,
     recruiterNote: "NLP + model improvement",
     summary:
-      "Worked on multilingual text models for support and moderation workflows.",
+      "Built model pipelines for cheating detection and moderation workflows.",
     achievements: [
-      "Fine-tuned XLM-Roberta, Longformer, and LSTM models.",
-      "Built ensemble models using multiple data sources.",
-      "Improved model performance by 15% over the baseline.",
+      "Built Python pipelines with PyTorch and Hugging Face.",
+      "Created Docker, Bash, and Linux workflows for model deployment.",
+      "Reduced moderation workload by 70% and response time by 80%.",
     ],
-    stack: ["PyTorch", "Hugging Face", "NLP", "OpenAI APIs", "Classification"],
+    stack: ["Python", "PyTorch", "Hugging Face", "Docker", "Bash", "Linux"],
   },
   {
     title: "Machine Learning Engineer Intern",
