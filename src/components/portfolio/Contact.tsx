@@ -33,7 +33,7 @@ const Contact = () => {
                 Contact
               </div>
               <h2 className="text-3xl font-semibold text-foreground md:text-4xl">
-                Want to talk?
+                Get in touch.
               </h2>
               <p className="mt-5 max-w-xl text-base leading-8 text-muted-foreground">
                 I am open to machine learning, software engineering, and research-focused
@@ -75,7 +75,7 @@ const Contact = () => {
 
             <div className="section-wash p-8 lg:p-10">
               <p className="text-xs font-semibold uppercase text-accent/80">
-                Best fit
+                Areas of interest
               </p>
               <div className="mt-6 space-y-3">
                 {[

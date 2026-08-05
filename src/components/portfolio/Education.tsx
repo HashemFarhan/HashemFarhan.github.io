@@ -32,10 +32,9 @@ const Education = () => {
             <span className="eyebrow-line" />
             Education
           </div>
-          <h2 className="section-title">Education and campus work.</h2>
+          <h2 className="section-title">Education and involvement.</h2>
           <p className="section-copy">
-            Computer science coursework, tutoring, student leadership, and a few selected
-            recognitions.
+            Computer science coursework, tutoring, student leadership, and selected recognitions.
           </p>
         </div>
 

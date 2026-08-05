@@ -52,12 +52,12 @@ const Skills = () => {
         <div className="max-w-3xl">
           <div className="section-kicker">
             <span className="eyebrow-line" />
-            Capabilities
+            Skills
           </div>
-          <h2 className="section-title">Skills I use most.</h2>
+          <h2 className="section-title">Core tools and strengths.</h2>
           <p className="section-copy">
-            A focused view of the tools I use for machine learning, data work, web development,
-            and deployment.
+            The main tools I use across machine learning, data work, web development, and
+            deployment.
           </p>
         </div>
 

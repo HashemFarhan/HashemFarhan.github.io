@@ -7,7 +7,7 @@ const experiences = [
     location: "Remote",
     period: "Jan 2026 - Present",
     icon: Brain,
-    recruiterNote: "35% more M&A leads",
+    highlight: "35% more M&A leads",
     summary:
       "Building AI features and backend services for lead generation workflows.",
     achievements: [
@@ -23,7 +23,7 @@ const experiences = [
     location: "Remote",
     period: "Nov 2025 - May 2026",
     icon: Code2,
-    recruiterNote: "40+ beta users",
+    highlight: "40+ beta users",
     summary:
       "Built an AI note generation platform from the first architecture decisions through production launch.",
     achievements: [
@@ -39,7 +39,7 @@ const experiences = [
     location: "Remote",
     period: "Nov 2025 - Apr 2026",
     icon: Briefcase,
-    recruiterNote: "$150K funding support",
+    highlight: "$150K funding support",
     summary:
       "Built mobile and backend features for a music application with real-time audio features.",
     achievements: [
@@ -55,7 +55,7 @@ const experiences = [
     location: "Remote",
     period: "Aug 2024 - Present",
     icon: Brain,
-    recruiterNote: "Research + healthcare data",
+    highlight: "Research + healthcare data",
     summary:
       "Working with a research team on healthcare data analysis and predictive modeling.",
     achievements: [
@@ -71,7 +71,7 @@ const experiences = [
     location: "Remote",
     period: "Apr 2025 - Dec 2025",
     icon: Code2,
-    recruiterNote: "Leadership + production web app",
+    highlight: "Leadership + production web app",
     summary:
       "Led development for a funding platform for content creators.",
     achievements: [
@@ -87,7 +87,7 @@ const experiences = [
     location: "Remote",
     period: "May 2025 - Aug 2025",
     icon: Brain,
-    recruiterNote: "NLP + model improvement",
+    highlight: "NLP + model improvement",
     summary:
       "Built model pipelines for cheating detection and moderation workflows.",
     achievements: [
@@ -103,7 +103,7 @@ const experiences = [
     location: "Remote",
     period: "Jun 2024 - Sep 2024",
     icon: Briefcase,
-    recruiterNote: "LLMs + cloud deployment",
+    highlight: "LLMs + cloud deployment",
     summary:
       "Built tools that let teams ask natural-language questions about business data.",
     achievements: [
@@ -121,12 +121,12 @@ const Experience = () => {
       <div className="section-inner">
         <div className="section-heading">
           <div>
-            <p className="section-kicker">Experience</p>
-            <h2 className="section-title">Relevant work, clearly shown.</h2>
+            <p className="section-kicker">Work</p>
+            <h2 className="section-title">Recent experience.</h2>
           </div>
           <p className="section-copy">
-            A mix of research, ML internships, and web development. The highlighted labels
-            call out what matters most for recruiters.
+            A mix of AI systems, full-stack engineering, research, and machine learning
+            internships.
           </p>
         </div>
 
@@ -164,7 +164,7 @@ const Experience = () => {
                       </div>
                       <span className="inline-flex w-fit items-center gap-2 rounded-md border border-emerald-400/20 bg-emerald-400/10 px-3 py-2 text-sm font-medium text-emerald-200">
                         <Sparkles className="h-4 w-4" />
-                        {experience.recruiterNote}
+                        {experience.highlight}
                       </span>
                     </div>
 
