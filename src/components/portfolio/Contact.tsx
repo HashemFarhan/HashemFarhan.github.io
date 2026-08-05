@@ -1,4 +1,4 @@
-import { ArrowRight, Github, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, MapPin } from "lucide-react";
 
 const contactItems = [
   {
@@ -6,12 +6,6 @@ const contactItems = [
     value: "1hashemfarhan@gmail.com",
     href: "mailto:1hashemfarhan@gmail.com",
     icon: Mail,
-  },
-  {
-    label: "Phone",
-    value: "(812) 778-0699",
-    href: "tel:8127780699",
-    icon: Phone,
   },
   {
     label: "Location",
